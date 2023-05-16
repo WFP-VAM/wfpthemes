@@ -95,7 +95,7 @@ pal_ipc <- c("#CDFACD","#FAE61E","#E67800","#C80000", "#640000")
 
 ## creates color palette object aligned with ipc guidance
 # https://docs.wfp.org/api/documents/WFP-0000134704/download/?_ga=2.91951514.145906710.1681992709-313551633.1680773110
-pal_stoplight_3pt <- c("#92D050","#FFFF00","#FF0000")
+pal_stoplight_3pt <- c("#27AE60","#F1C40F","#C0392B")
 
 ## creates color palette object aligned with ipc guidance
 pal_stoplight_4pt <- c("#92D050","#FFFF00","#FFC000","#FF0000")
