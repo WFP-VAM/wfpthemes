@@ -100,11 +100,16 @@ pal_stoplight_3pt <- c("#27AE60","#F1C40F","#C0392B")
 ## creates color palette object aligned with ipc guidance
 pal_stoplight_4pt <- c("#92D050","#FFFF00","#FFC000","#FF0000")
 
+## creates FCSN palette from WFP guidance 
+##https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp277333.pdf?_ga=2.245902989.80447050.1684258173-449667123.1675176625
+pal_FCSN <- <- c("#92D050","#E46C0A","#C00000")
+
 ## creates object containing palette name, potential palette applications, and min/max number of categories palette can accommodate
 wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                      "pal_ipc",
                                      "pal_stoplight_3pt",
                                      "pal_stoplight_4pt",
+                                     "pal_FCSN",
                                      "pal_blue",
                                      "pal_navy",
                                      "pal_green",
