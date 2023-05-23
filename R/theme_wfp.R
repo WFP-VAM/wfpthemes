@@ -2,27 +2,27 @@
 ## Creates a function that stores a WFP ggplot theme
 ##########################################################
 
-## resource outlining primary ggplot theme elements 
-## https://ggplot2.tidyverse.org/reference/theme.html 
+## resource outlining primary ggplot theme elements
+## https://ggplot2.tidyverse.org/reference/theme.html
 ## https://ggplot2.tidyverse.org/reference/element.html
 
 theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
                       rel_small = 8 / 9, rel_tiny = 7 / 9, rel_large = 12 / 9,
                       grid = TRUE, axis = "x", axis_text = TRUE, axis_title = TRUE,
                       axis_ticks = FALSE, legend = TRUE, legend_title = FALSE) {
-  
+
   ## establishment of margin formatting
   half_line <- font_size / 2
-  
+
   ## establishment of colour pallete for font and line formatting
   wfp_blue <- "#007DBC"
   dark_grey <- "#191919"
   medium_grey <- "#666666"
   light_grey <- "#CCCCCC"
-  
-  ## establishment of default theme formatting 
+
+  ## establishment of default theme formatting
   ret <- ggplot2::theme_minimal(base_family = font_family, base_size = font_size)
-  
+
   ## modification of default theme formatting
   ret <- ret + ggplot2::theme(line = ggplot2::element_line(
     color = "black", size = line_size, linetype = 1, lineend = "butt"
@@ -35,7 +35,7 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
     size = font_size, hjust = 0.5, vjust = 0.5, angle = 0, lineheight = .9,
     margin = ggplot2::margin(), debug = FALSE
   ))
-  
+
   ## establishment of legend formatting
   if (!legend) {
     ret <- ret + theme(legend.position = "none")
@@ -60,13 +60,13 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
                                                                        hjust = 0))
     }
   }
-  
+
   ## establishment of grid formatting for panel (i.e. space behind faceted plots)
   if (inherits(grid, "character") | grid == TRUE) {
     ret <- ret + ggplot2::theme(panel.grid = ggplot2::element_line(color = light_grey, size = line_size / 2))
     ret <- ret + ggplot2::theme(panel.grid.major = ggplot2::element_line(color = light_grey, size = line_size / 2))
     ret <- ret + ggplot2::theme(panel.grid.minor = ggplot2::element_line(color = light_grey, size = line_size / 2))
-    
+
     if (inherits(grid, "character")) {
       if (regexpr("X", grid)[1] < 0) ret <- ret + ggplot2::theme(panel.grid.major.x = ggplot2::element_blank())
       if (regexpr("Y", grid)[1] < 0) ret <- ret + ggplot2::theme(panel.grid.major.y = ggplot2::element_blank())
@@ -76,13 +76,13 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
   } else {
     ret <- ret + ggplot2::theme(panel.grid = ggplot2::element_blank())
   }
-  
+
   ## establishment of formatting for panel (i.e. space behind faceted plots)
   ret <- ret + ggplot2::theme(panel.background = ggplot2::element_blank())
   ret <- ret + ggplot2::theme(panel.border = ggplot2::element_blank())
   ret <- ret + ggplot2::theme(panel.spacing = grid::unit(half_line, "pt"))
   ret <- ret + ggplot2::theme(panel.ontop = FALSE)
-  
+
   ## establishment of formatting for axis
   if (inherits(axis, "character") | axis == TRUE) {
     ret <- ret + ggplot2::theme(axis.line = ggplot2::element_line(
@@ -120,7 +120,7 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
   } else {
     ret <- ret + ggplot2::theme(axis.line = ggplot2::element_blank())
   }
-  
+
   ## establishment of formatting for axis text
   if (inherits(axis_text, "character") | axis_text == TRUE) {
     ret <- ret + ggplot2::theme(axis.text = ggplot2::element_text(size = rel(rel_small), color = dark_grey))
@@ -163,7 +163,7 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
   } else {
     ret <- ret + ggplot2::theme(axis.text = ggplot2::element_blank())
   }
-  
+
   ## establishment of formatting for axis title
   if (inherits(axis_title, "character") | axis_title == TRUE) {
     ret <- ret + ggplot2::theme(axis.title = ggplot2::element_text(size = rel(rel_small), color = medium_grey))
@@ -206,7 +206,7 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
   } else {
     ret <- ret + ggplot2::theme(axis.title = ggplot2::element_blank())
   }
-  
+
   ## establishment of formatting for axis ticks
   if (inherits(axis_ticks, "character") | axis_ticks == TRUE) {
     ret <- ret + ggplot2::theme(axis.ticks.length = grid::unit(half_line / 2, "pt"))
@@ -230,13 +230,13 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
   } else {
     ret <- ret + ggplot2::theme(axis.ticks = element_blank())
   }
-  
+
   ## establishment of formatting for strip text(i.e. heading above faceted plots)
   ret <- ret + ggplot2::theme(strip.text = ggplot2::element_text(
     hjust = 0, size = font_size,
     margin = ggplot2::margin(half_line / 2, half_line / 2, half_line / 2, half_line / 2)
   ))
-  
+
   ## establishment of formatting for title and subtitle
   ret <- ret + ggplot2::theme(plot.title = ggplot2::element_text(
     size = rel(rel_large), color = "black", face = "bold",
@@ -249,7 +249,7 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
     margin = ggplot2::margin(t = -half_line, b = font_size * rel_large)
   ))
   ret <- ret + ggplot2::theme(plot.title.position = "plot")
-  
+
   ## establishment of formatting for caption (i.e. footnote or source text)
   ret <- ret + ggplot2::theme(plot.caption = ggplot2::element_text(
     size = rel(rel_tiny), color = medium_grey,
@@ -257,18 +257,18 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
     margin = ggplot2::margin(t = half_line)
   ))
   ret <- ret + ggplot2::theme(plot.caption.position = "plot")
-  
+
   ## establishment of formatting for tags (i.e. figure label)
   ret <- ret + ggplot2::theme(plot.tag = ggplot2::element_text(
-    size = font_size, color = wfp_blue,
-    hjust = 0, vjust = 1
+    size = font_size, color = "black",
+    hjust = 0, vjust = -1
   ))
   ret <- ret + ggplot2::theme(plot.tag.position = c(0, 1))
-  
+
   ## establishment of formatting for plot background
   ret <- ret + ggplot2::theme(plot.background = ggplot2::element_blank())
   ret <- ret + ggplot2::theme(plot.margin = ggplot2::margin(font_size, font_size, font_size, font_size))
-  
+
   ## establishment of formatting for font sizing
   class(ret) <- c("conditional_wfp_theme", class(ret))
   attr(ret, "font_size") <- font_size
