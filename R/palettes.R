@@ -100,9 +100,9 @@ pal_stoplight_3pt <- c("#27AE60","#F1C40F","#C0392B")
 ## creates color palette object aligned with ipc guidance
 pal_stoplight_4pt <- c("#92D050","#FFFF00","#FFC000","#FF0000")
 
-## creates FCSN palette from WFP guidance
+## creates FCSN palette from WFP guidance 
 ##https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp277333.pdf?_ga=2.245902989.80447050.1684258173-449667123.1675176625
-pal_FCSN <- c("#92D050","#E46C0A","#C00000")
+pal_FCSN <- <- c("#92D050","#E46C0A","#C00000")
 
 ## creates object containing palette name, potential palette applications, and min/max number of categories palette can accommodate
 wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
@@ -244,11 +244,11 @@ scale_colour_wfp_a <- function(..., type = "sequential",
                                palette = 1,
                                direction = 1,
                                na.value = "#E9E9E9", guide = "colourbar") {
-
+  
   pal <- wfp_pal_scale(type = type,
                        palette = palette,
                        direction = direction)(256)
-
+  
   continuous_scale("colour",
                    "wfp_continuous",
                    gradient_n_pal(pal),
@@ -264,13 +264,13 @@ scale_colour_wfp_b <- function(..., type = "qualitative",
                                nmax = NULL,
                                order = NULL,
                                na.value = "#E9E9E9") {
-
+  
   pal <- wfp_pal_scale(type = type,
                        palette = palette,
                        nmax = nmax,
                        order = order,
                        direction = direction)
-
+  
   discrete_scale("colour",
                  "wfp_discrete",
                  pal,
@@ -289,11 +289,11 @@ scale_fill_wfp_a <- function(..., type = "sequential",
                              direction = 1,
                              na.value = "#E9E9E9",
                              guide = "colourbar") {
-
+  
   pal <- wfp_pal_scale(type = type,
                        palette = palette,
                        direction = direction)(256)
-
+  
   continuous_scale("fill",
                    "wfp_continuous",
                    gradient_n_pal(pal),
@@ -309,13 +309,13 @@ scale_fill_wfp_b <- function(..., type = "qualitative",
                              nmax = NULL,
                              order = NULL,
                              na.value	= "#E9E9E9") {
-
+  
   pal <- wfp_pal_scale(type = type,
                        palette = palette,
                        nmax = nmax,
                        order = order,
                        direction = direction)
-
+  
   discrete_scale("fill",
                  "wfp_discrete",
                  pal,
@@ -333,36 +333,36 @@ wfp_pal_scale <- function(type = "qualitative",
                           nmax = NULL, order = NULL,
                           palette = 1, direction = 1) {
   pal <- wfp_pal_name(palette, type)
-
+  
   function(n) {
     if (is.null(nmax) | type != "qualitative")
       nmax <- n
     if (is.null(order) | type != "qualitative")
       order <- 1:n
-
+    
     if (n > nmax) {
       warning("Insufficient values in scale_{color|fill}_wfp_d. ", n, " needed but only ",
               nmax, " provided.", call. = FALSE)
     }
-
+    
     # If less than 3 colors are requested, brewer.pal will return a 3-color palette and
     # give a warning. This warning isn't useful, so suppress it.
     # If the palette has k colors and >k colors are requested, brewer.pal will
     # return a k-color palette and give a warning. This warning is useful, so
     # don't suppress it.
-
+    
     if (nmax < 3) {
       pal <- suppressWarnings(wfp_pal(nmax, pal))
     } else {
       pal <- wfp_pal(nmax, pal)
     }
-
+    
     # In both cases ensure we have n items
     pal <- pal[order]
-
+    
     if (direction == -1)
       pal = rev(pal)
-
+    
     unname(pal)
   }
 }
@@ -440,24 +440,24 @@ display_wfp_all <- function(n = NULL, type = "all") {
     stop(paste(type, "is not a valid name for a color type\n"))
   }
   selected_metadata <- wfpcolors[wfpcolors$name %in% selected_type$name, ]
-
+  
   n_colors <- nrow(selected_metadata)
-
+  
   if (is.null(n)) {
     my_n <- selected_metadata$max_n
   } else{
     my_n <- rep(n, n_colors)
   }
-
+  
   selected_colors <- vector("list", n_colors)
-
+  
   ylim <- c(0, n_colors)
   oldpar <- par(mgp = c(2, 0.25, 0))
   on.exit(par(oldpar))
   max_my_n <- max(my_n)
   plot(1, 1, xlim = c(-1.5, max_my_n), ylim = ylim,
        type = "n", axes = FALSE, bty = "n", xlab = "", ylab = "")
-
+  
   for(i in seq_len(n_colors)) {
     one_color <- wfp_pal(n = my_n[i],
                          name = selected_metadata$name[i])
