@@ -1,4 +1,4 @@
-##########################################################
+#########################################################
 ## Creates discrete color palettes for vizualization of categorical values
 ##########################################################
 
@@ -95,21 +95,20 @@ pal_ipc <- c("#CDFACD","#FAE61E","#E67800","#C80000", "#640000")
 
 ## creates color palette object aligned with ipc guidance
 # https://docs.wfp.org/api/documents/WFP-0000134704/download/?_ga=2.91951514.145906710.1681992709-313551633.1680773110
-pal_stoplight_3pt <- c("#27AE60","#F1C40F","#C0392B")
+pal_stoplight_3pt <- c("#92D050","#FFFF00","#FF0000")
 
 ## creates color palette object aligned with ipc guidance
 pal_stoplight_4pt <- c("#92D050","#FFFF00","#FFC000","#FF0000")
 
-##add another palette for FCSN based on guidance below
-##https://documents.wfp.org/stellent/groups/public/documents/manual_guide_proced/wfp277333.pdf?_ga=2.245902989.80447050.1684258173-449667123.1675176625
-#pal_FCSN <-  c("#92D050","#E46C0A","#C00000")
-
+## creates color palette object aligned with indicator compendium guidance
+pal_fcsn <-  c("#92D050","#E46C0A","#C00000")
 
 ## creates object containing palette name, potential palette applications, and min/max number of categories palette can accommodate
 wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                      "pal_ipc",
                                      "pal_stoplight_3pt",
                                      "pal_stoplight_4pt",
+                                     "pal_fcsn",
                                      "pal_blue",
                                      "pal_navy",
                                      "pal_green",
@@ -118,17 +117,18 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                      "pal_grey",
                                      "pal_blue_red",
                                      "pal_navy_red"),
-                            type = c(rep("qualitative", 4),
+                            type = c(rep("qualitative", 5),
                                      rep("sequential", 6),
                                      rep("diverging", 2)),
                             min_n = 1,
-                            max_n = c(c(10, 5, 3, 4),
+                            max_n = c(c(10, 5, 3, 4, 3),
                                       rep(7, 6),
                                       rep(9, 2)),
                             n1 = list(pal_main[1],
                                       pal_ipc[1],
                                       pal_stoplight_3pt[1],
                                       pal_stoplight_4pt[1],
+                                      pal_fcsn[1],
                                       pal_blue_wfp[4],
                                       pal_navy_wfp[5],
                                       pal_green_wfp[4],
@@ -140,6 +140,7 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                       pal_ipc[1:2],
                                       pal_stoplight_3pt[1:2],
                                       pal_stoplight_4pt[1:2],
+                                      pal_fcsn[1:2],
                                       c(pal_blue_wfp[2], pal_blue_wfp[6]),
                                       c(pal_navy_wfp[2], pal_navy_wfp[6]),
                                       c(pal_green_wfp[2], pal_green_wfp[6]),
@@ -152,6 +153,7 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                       pal_ipc[1:3],
                                       pal_stoplight_3pt[1:3],
                                       pal_stoplight_4pt[1:3],
+                                      pal_fcsn[1:3],
                                       pal_blue_wfp[3:5],
                                       pal_navy_wfp[3:5],
                                       pal_green_wfp[3:5],
@@ -164,6 +166,7 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                       pal_ipc[1:4],
                                       NULL,
                                       pal_stoplight_4pt[1:4],
+                                      NULL,
                                       pal_blue_wfp[2:5],
                                       pal_navy_wfp[2:5],
                                       pal_green_wfp[2:5],
@@ -176,6 +179,7 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                         pal_red_wfp[2], pal_red_wfp[4])),
                             n5 = list(pal_main[1:5],
                                       pal_ipc[1:5],
+                                      NULL,
                                       NULL,
                                       NULL,
                                       pal_blue_wfp[2:6],
@@ -194,6 +198,7 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                       NULL,
                                       NULL,
                                       NULL,
+                                      NULL,
                                       pal_blue_wfp[1:6],
                                       pal_navy_wfp[1:6],
                                       pal_green_wfp[1:6],
@@ -203,6 +208,7 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                       c(pal_blue_wfp[4:2],  pal_red_wfp[2:4]),
                                       c(pal_navy_wfp[5:3], pal_red_wfp[2:4])),
                             n7 = list(pal_main[1:7],
+                                      NULL,
                                       NULL,
                                       NULL,
                                       NULL,
@@ -217,17 +223,17 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                             n8 = list(pal_main[1:8],
                                       NULL,NULL, NULL,
                                       NULL, NULL, NULL,
-                                      NULL, NULL, NULL,
+                                      NULL, NULL, NULL, NULL,
                                       c(pal_blue_wfp[5:2], pal_red_wfp[2:5]),
                                       c(pal_navy_wfp[5:2], pal_red_wfp[2:5])),
                             n9 = list(pal_main[1:9],
                                       NULL, NULL, NULL,
                                       NULL, NULL, NULL,
-                                      NULL, NULL, NULL,
+                                      NULL, NULL, NULL, NULL,
                                       c(pal_blue_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5]),
                                       c(pal_navy_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5])),
                             n10 = list(pal_main,
-                                       NULL, NULL, NULL,
+                                       NULL, NULL, NULL, NULL,
                                        NULL, NULL, NULL,
                                        NULL, NULL, NULL,
                                        NULL, NULL))
