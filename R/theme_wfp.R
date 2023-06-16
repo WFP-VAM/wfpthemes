@@ -7,7 +7,7 @@
 ## https://ggplot2.tidyverse.org/reference/element.html
 
 theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
-                      rel_small = 8 / 9, rel_tiny = 7 / 9, rel_large = 12 / 9,
+                      rel_tiny = 6 / 10, rel_small = 8 / 10,  rel_normal = 10 / 10, rel_large = 12 / 10, rel_xlarge = 14 / 10, rel_xxlarge = 16 / 10,
                       grid = TRUE, axis = "x", axis_text = TRUE, axis_title = TRUE,
                       axis_ticks = FALSE, legend = TRUE, legend_title = FALSE) {
 
@@ -237,41 +237,55 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
     margin = ggplot2::margin(half_line / 2, half_line / 2, half_line / 2, half_line / 2)
   ))
 
-  ## establishment of formatting for title and subtitle
+  ## establishment of formatting for title
   ret <- ret + ggplot2::theme(plot.title = ggplot2::element_text(
-    size = rel(rel_large), color = "black", face = "bold",
-    hjust = 0, vjust = 1,
+    size = rel(rel_xlarge), color = "black", face = "bold",
+    hjust = 0, vjust = -1,
     margin = ggplot2::margin(b = font_size),
   ))
+
+  ## establishment of formatting for subtitle
   ret <- ret + ggplot2::theme(plot.subtitle = ggplot2::element_text(
-    size = font_size, color = dark_grey, face = "plain",
-    hjust = 0, vjust = 1,
+    size = rel(rel_large), color = dark_grey, face = "plain",
+    hjust = 0, vjust = -1,
     margin = ggplot2::margin(t = -half_line, b = font_size * rel_large)
   ))
   ret <- ret + ggplot2::theme(plot.title.position = "plot")
 
   ## establishment of formatting for caption (i.e. footnote or source text)
   ret <- ret + ggplot2::theme(plot.caption = ggplot2::element_text(
-    size = rel(rel_tiny), color = medium_grey,
-    hjust = 0, vjust = 1,
+    size = rel(rel_small), color = medium_grey,
+    hjust = 0, vjust = 0,
     margin = ggplot2::margin(t = half_line)
   ))
   ret <- ret + ggplot2::theme(plot.caption.position = "plot")
 
   ## establishment of formatting for tags (i.e. figure label)
   ret <- ret + ggplot2::theme(plot.tag = ggplot2::element_text(
-    size = font_size, color = "black",
-    hjust = 0, vjust = -1
+    size = rel(rel_large), color = "black",
+    hjust = 0, vjust = 0,
+    margin = ggplot2::margin(t = half_line)
   ))
-  ret <- ret + ggplot2::theme(plot.tag.position = c(0, 1))
+  ret <- ret + ggplot2::theme(plot.tag.position = "topleft")
 
   ## establishment of formatting for plot background
   ret <- ret + ggplot2::theme(plot.background = ggplot2::element_blank())
-  ret <- ret + ggplot2::theme(plot.margin = ggplot2::margin(font_size, font_size, font_size, font_size))
+  ret <- ret + ggplot2::theme(plot.margin = ggplot2::margin(rel_small, rel_small, rel_small, rel_small))
 
   ## establishment of formatting for font sizing
   class(ret) <- c("conditional_wfp_theme", class(ret))
   attr(ret, "font_size") <- font_size
   ret
+}
+
+
+##########################################################
+## Creates a function the updates the default gemo font family to Open Sans
+##########################################################
+
+update_geom_font_defaults <- function(family = "Open Sans", face = "plain", size = 3.5,
+                                      color = "#191919") {
+  ggplot2::update_geom_defaults("text", list(family = family, face = face, size = size, color = color))
+  ggplot2::update_geom_defaults("label", list(family = family, face = face, size = size, color = color))
 }
 
