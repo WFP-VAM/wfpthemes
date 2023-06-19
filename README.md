@@ -5,7 +5,7 @@
 ## Overview
 
 The **wfpthemes** package provides a `ggplot2` theme and a set of
-colour palettes for making graphics based on WFP Data Visualization Guidelines (in progress) .
+colour palettes for making graphics based on [WFP Data Visualization Guidelines (informal and not yet published)](https://github.com/WFP-VAM/wfpthemes/blob/main/man/dataviz_standards.md).
 The goal of this package is to assist in the creation of charts, tables and maps
 while promoting the WFP visual identity with a predefined `ggplot` theme, as well as a set of colour palettes and scales.
 
