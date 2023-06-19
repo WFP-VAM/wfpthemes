@@ -6,7 +6,7 @@ Make it easy for readers to process the key information in charts by drawing the
 
 ### Elements
 
-<img src="man/images/elements.png">
+<img src="images/elements.png">
 
 #### 1. Figure Number
 The figure number appears above the figure title so users can easily match content discussed in the narrative text and the graph. *Recommended*   
