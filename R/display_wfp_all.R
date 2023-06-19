@@ -1,23 +1,3 @@
-#' WFP color palettes viewer
-#'
-#' Displays the color palettes from wfpthemes package color
-#'
-#' @param n Number of different colors in the palette, minimum depending on the palette (2), maximum depending on the palette (5, 7 or 10)
-#' @param type Type of the palette, can be "sequential", "diverging", "qualitative" or "all"
-#'
-#'
-#' @examples
-#' library(wfpthemes)
-#' display_wfp_all()
-#' display_wfp_all(type = "diverging")
-#' display_wfp_all(type = c("diverging", "qualitative", "sequential"))
-#' display_wfp_all(3, type = "sequential")
-#' display_wfp_all(5, type = "sequential")
-#'
-
-
-
-
 ##########################################################
 ## Creates a function that displays the color palettes
 ##########################################################
