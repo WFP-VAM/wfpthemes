@@ -4,15 +4,8 @@ library(extrafont)
 ## Loads required font family
 ##########################################################
 
-# font_import(paths = "C:/Users/william.mcfall/OneDrive - World Food Programme/Documents/R/R-4.1.2/library/rmarkdown/rmd/h/bootstrap/css/fonts")
 loadfonts(device="win")
 
-##########################################################
-## Loads dataset
-##########################################################
-
-file_path <- "https://github.com/WFP-VAM/Rdatavizgallery/blob/main/data/sampledataenglish.sav?raw=true"
-example_data <- read_sav(file_path)
 
 ##########################################################
 ## Creates discrete color palettes for vizualization of categorical values
