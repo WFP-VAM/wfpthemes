@@ -1,3 +1,4 @@
+library(extrafont)
 
 ##########################################################
 ## Loads required font family
