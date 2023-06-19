@@ -103,7 +103,7 @@ rcsi_barplot <- rcsi_admin1_table_long %>% ggplot() +
 
 rcsi_barplot
 ```
-<img src="man/images/rcsi.png" width="2100" />
+<img src="man/images/rcsi_example.png" width="2100" />
 
 
 ## Getting help
