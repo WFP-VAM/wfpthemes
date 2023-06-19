@@ -182,7 +182,7 @@ wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
                                       pal_stoplight_4pt[1:4],
                                       NULL,
                                       pal_lcs[1:4],
-                                      pal_cari[1:4]
+                                      pal_cari[1:4],
                                       pal_blue_wfp[2:5],
                                       pal_navy_wfp[2:5],
                                       pal_green_wfp[2:5],
