@@ -40,7 +40,6 @@ library(scales)
 library(wfpthemes)
 ```
 
-### Base ggplot2 theme
 
 ### WFP color palette
 
@@ -53,5 +52,17 @@ display_wfp_all()
 
 <img src="man/images/palettes.png" width="2100" />
 
-### Base theme and color scale
+### Example Chart
 
+## Getting help
+
+Please report any issues or bugs on
+[GitHub](https://github.com/WFP-VAM/wfpthemes/issues), try to include
+a minimal reproducible example to help us understand.
+
+## Code of Conduct
+
+Please note that the mynewpack project is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
