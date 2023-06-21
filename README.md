@@ -105,6 +105,11 @@ rcsi_barplot
 ```
 <img src="man/images/rcsi_example.png" width="2100" />
 
+## Quick Tutorial 
+
+Go [here](https://github.com/WFP-VAM/wfpthemes/blob/main/man/tutorial.md#quick-tutorial-on-wfpthemes) for a rushed tutorial on selecting color palettes and modifying arguments in theme_wfp().
+
+
 
 ## Getting help
 
