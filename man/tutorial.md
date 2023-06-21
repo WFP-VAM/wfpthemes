@@ -50,12 +50,11 @@ any kind in your house because of lack of resources to get food?'",
     caption = "Source: Emergency Food Security Assessment, data collected April 2024"
   ) + theme_wfp()
 ```
-
-<img src="images/HHSNoFood_admin1_barplot_ugly.png" width="1500" />
-
 ``` r
 plot(HHSNoFood_admin1_barplot)
 ```
+
+<img src="images/HHSNoFood_admin1_barplot_ugly.png" width="1500" />
 
 Lastly, we applied *theme_wfp()* but it still looks ugly so let's tweak the settings in *theme_wfp()* to get rid of the unnecessary clutter. Since we already know from the title description that the y axis is a percentage and the data labels contain the values, we can remove all the y-axis labels/text/grid lines. For the x-axis, all we need is to show the  axis text (the names of the states) - the rest we can keep blank.
 
