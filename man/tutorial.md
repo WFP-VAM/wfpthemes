@@ -1,6 +1,6 @@
 ## Quick Tutorial on wfpthemes 
 
-## using/selecting color palettes
+### using/selecting color palettes
 
 Lets say that I wanted to create a graph of one of the Household Hunger Strategy questions.
 
@@ -27,7 +27,7 @@ Second, let's take a look at available color palettes .
 display_wfp_all()
 ```
 
-<img src="man/images/palettes.png" width="2100" />
+<img src="images/palettes.png" width="2100" />
 
 
 Since we have two response options and no need for a specific palette (like those for FCS, CARI, etc), we can use the main wfp palette - *pal_wfp_main* to create our graph.  Lets graph !
@@ -51,7 +51,7 @@ any kind in your house because of lack of resources to get food?'",
   ) + theme_wfp()
 ```
 
-<img src="man/images/HHSNoFood_admin1_barplot_ugly.png" width="2100" />
+<img src="images/HHSNoFood_admin1_barplot_ugly.png" width="2100" />
 
 ``` r
 plot(HHSNoFood_admin1_barplot)
@@ -71,4 +71,4 @@ HHSNoFood_admin1_barplot <- HHSNoFood_admin1_barplot + theme_wfp(
 plot(HHSNoFood_admin1_barplot)
 ```
 
-<img src="man/images/HHSNoFood_admin1_barplot_lessugly.png" width="2100" />
+<img src="images/HHSNoFood_admin1_barplot_lessugly.png" width="2100" />
