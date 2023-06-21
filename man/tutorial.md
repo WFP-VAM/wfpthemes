@@ -51,6 +51,8 @@ any kind in your house because of lack of resources to get food?'",
   ) + theme_wfp()
 ```
 
+<img src="man/images/HHSNoFood_admin1_barplot_ugly.png" width="2100" />
+
 ``` r
 plot(HHSNoFood_admin1_barplot)
 ```
@@ -68,3 +70,5 @@ HHSNoFood_admin1_barplot <- HHSNoFood_admin1_barplot + theme_wfp(
 ``` r
 plot(HHSNoFood_admin1_barplot)
 ```
+
+<img src="man/images/HHSNoFood_admin1_barplot_lessugly.png" width="2100" />
