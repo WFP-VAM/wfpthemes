@@ -166,12 +166,12 @@ wfpcolors <- tibble::tibble(
   n1 = list(
     pal_main[1],           # Main WFP blue
     pal_ipc[1],            # IPC minimal/none
-    "#92D050",             # foodsec_blue_3pt (placeholder - update with new color)
-    "#92D050",             # foodsec_blue_4pt (placeholder - update with new color)
-    "#FF0000",             # foodsec_red_3pt (placeholder - update with new color)
-    "#FF0000",             # foodsec_red_4pt (placeholder - update with new color)
-    "#92D050",             # FCSN (update to match foodsec_blue_3pt)
-    "#F1ECE8",             # LCS (update to match foodsec_blue_3pt)
+    pal_foodsec_blue_3pt[1],             # foodsec_blue_3pt (placeholder - update with new color)
+    pal_foodsec_blue_4pt[1],             # foodsec_blue_4pt (placeholder - update with new color)
+    pal_foodsec_red_3pt[1],             # foodsec_red_3pt (placeholder - update with new color)
+    pal_foodsec_red_4pt[1],             # foodsec_red_4pt (placeholder - update with new color)
+    pal_fcsn[1],             # FCSN (update to match foodsec_blue_3pt)
+    pal_lcs[1],             # LCS (update to match foodsec_blue_3pt)
     pal_cari[1],           # CARI
     pal_cari[1],           # CARI area (new)
     pal_blue_wfp[4],       # Medium blue
@@ -183,50 +183,51 @@ wfpcolors <- tibble::tibble(
   n2 = list(
     pal_main[1:2],                         # Main blue, light blue
     pal_ipc[1:2],                          # IPC 1-2
-    c("#92D050", "#FFFF00"),               # foodsec_blue_3pt (placeholder - update)
-    c("#92D050", "#FFFF00"),               # foodsec_blue_4pt (placeholder - update)
-    c("#FF0000", "#FFC000"),               # foodsec_red_3pt (placeholder - update)
-    c("#FF0000", "#FFC000"),               # foodsec_red_4pt (placeholder - update)
-    c("#92D050", "#E46C0A"),               # FCSN (update to match foodsec_blue_3pt)
-    c("#F1ECE8", "#D5B868"),               # LCS (update to match foodsec_blue_3pt)
+    pal_foodsec_blue_3pt[1:2],             # Using actual palette values
+    pal_foodsec_blue_4pt[1:2],             # Using actual palette values
+    pal_foodsec_red_3pt[1:2],              # Using actual palette values
+    pal_foodsec_red_4pt[1:2],              # Using actual palette values
+    pal_fcsn[1:2],                         # Using actual palette values
+    pal_lcs[1:2],                          # Using actual palette values
     pal_cari[1:2],                         # CARI
-    c(pal_cari[1], pal_cari[2]),           # CARI area (new)
+    pal_cari_area[1:2],                    # CARI area
     c(pal_blue_wfp[2], pal_blue_wfp[6]),   # Light and dark blue
     c(pal_red_wfp[2], pal_red_wfp[6]),     # Light and dark red
     c(pal_blue_wfp[2], pal_red_wfp[6]),    # Light blue to dark red
     c(pal_navy_wfp[2], pal_red_wfp[6])     # Light navy to dark red
   ),
+
   
   # Three-color palettes (n=3)
   n3 = list(
     pal_main[1:3],                         # Main blue, light blue, navy
     pal_ipc[1:3],                          # IPC 1-3
-    c("#92D050", "#FFFF00", "#FF0000"),    # foodsec_blue_3pt (placeholder - update)
-    c("#92D050", "#FFFF00", "#FFC000"),    # foodsec_blue_4pt (placeholder - update)
-    c("#FF0000", "#FFC000", "#92D050"),    # foodsec_red_3pt (placeholder - update)
-    c("#FF0000", "#FFC000", "#FFFF00"),    # foodsec_red_4pt (placeholder - update)
-    c("#92D050", "#E46C0A", "#C00000"),    # FCSN (update to match foodsec_blue_3pt)
-    c("#F1ECE8", "#D5B868", "#F37847"),    # LCS (update to match foodsec_blue_3pt)
+    pal_foodsec_blue_3pt,                  # Using full 3-color palette
+    pal_foodsec_blue_4pt[1:3],             # Using first 3 colors
+    pal_foodsec_red_3pt,                   # Using full 3-color palette
+    pal_foodsec_red_4pt[1:3],              # Using first 3 colors
+    pal_fcsn,                              # Using full 3-color palette
+    pal_lcs[1:3],                          # Using first 3 colors
     pal_cari[1:3],                         # CARI
-    c(pal_cari[1], pal_cari[2], pal_cari[3]), # CARI area (new)
+    pal_cari_area[1:3],                    # CARI area
     pal_blue_wfp[3:5],                     # Medium-light to medium-dark blue
     pal_red_wfp[3:5],                      # Medium-light to medium-dark red
     c(pal_blue_wfp[4], pal_grey_wfp[1], pal_red_wfp[4]), # Blue-neutral-red
     c(pal_navy_wfp[4], pal_grey_wfp[1], pal_red_wfp[4])  # Navy-neutral-red
   ),
   
-  # Four-color palettes (n=4)
+ # Four-color palettes (n=4)
   n4 = list(
     pal_main[1:4],                         # Main blue, light blue, navy, grey
     pal_ipc[1:4],                          # IPC 1-4
     NULL,                                  # foodsec_blue_3pt doesn't have 4 colors
-    c("#92D050", "#FFFF00", "#FFC000", "#FF0000"), # foodsec_blue_4pt (placeholder - update)
+    pal_foodsec_blue_4pt,                  # Using full 4-color palette
     NULL,                                  # foodsec_red_3pt doesn't have 4 colors
-    c("#FF0000", "#FFC000", "#FFFF00", "#92D050"), # foodsec_red_4pt (placeholder - update)
+    pal_foodsec_red_4pt,                   # Using full 4-color palette
     NULL,                                  # FCSN doesn't have 4 colors
-    c("#F1ECE8", "#D5B868", "#F37847", "#C00000"), # LCS (update to match foodsec_blue_4pt)
-    pal_cari[1:4],                         # CARI
-    c(pal_cari[1], pal_cari[2], pal_cari[3], pal_cari[4]), # CARI area (new)
+    pal_lcs,                               # Using full 4-color palette
+    pal_cari,                              # Using full 4-color palette
+    pal_cari_area,                         # Using full 4-color palette
     pal_blue_wfp[2:5],                     # Light to dark blue range
     pal_red_wfp[2:5],                      # Light to dark red range
     c(pal_blue_wfp[4], pal_blue_wfp[2], pal_red_wfp[2], pal_red_wfp[4]), # Blue to red
