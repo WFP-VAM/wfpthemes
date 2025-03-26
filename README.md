@@ -5,14 +5,14 @@
 ## Overview
 
 The **wfpthemes** package provides a `ggplot2` theme and a set of
-colour palettes for making graphics based on [WFP Data Visualization Guidelines (informal and not yet published)](https://github.com/WFP-VAM/wfpthemes/blob/main/man/dataviz_standards.md).
+colour palettes for making graphics based on WFP Data Visualization Guidelines (forthcoming).
 The goal of this package is to assist in the creation of charts, tables and maps
-while promoting the WFP visual identity with a predefined `ggplot` theme, as well as a set of colour palettes and scales.
+while promoting coherent data visualizations aligned with WFP visual identity with a predefined `ggplot` theme, as well as a set of colour palettes and scales.
 
-## Installation
+## Installation (dev)
+> NB This is the development version of the wfpthemes, it is frequently updated yet not stable.
 
-This package is not on yet on CRAN and to install it, you will need the
-remotes package.
+Since this package is not yet on CRAN, you will need the remotes package to install it:
 
 ``` r
 install.packages("remotes")
@@ -29,8 +29,7 @@ products and data stories:
     
 ## Fonts
 
-WFP uses **Open Sans** as its main font for publications and data
-visualizations. Fonts often creat headaches in R so if you have problems its not your fault.
+WFP uses **Open Sans** as its main font for publications and data visualizations. For other visual aspects, such as fonts and logo usage, please refer to the [WFP Visual Identity Guide](https://multimedia.wfp.org/Package/20SIJQCC99H).
 
 ## Usage
 
@@ -107,19 +106,14 @@ rcsi_barplot
 
 ## Quick Tutorial 
 
-Go [here](https://github.com/WFP-VAM/wfpthemes/blob/main/man/tutorial.md#quick-tutorial-on-wfpthemes) for a rushed tutorial on selecting color palettes and modifying arguments in theme_wfp().
-
-
+For a walkthrough on choosing color palettes and adjusting theme_wfp(), check out the [documentation](https://github.com/WFP-VAM/wfpthemes/blob/main/man/tutorial.md#quick-tutorial-on-wfpthemes).
 
 ## Getting help
 
-Please report any issues or bugs on
-[GitHub](https://github.com/WFP-VAM/wfpthemes/issues), try to include
-a minimal reproducible example to help us understand.
+If you run into issues or bugs, report them on the [GitHub Issues]((https://github.com/WFP-VAM/wfpthemes/issues)) page. Including a minimal reproducible example will make it easier to troubleshoot.
 
-## Code of Conduct
+## License
+All code and content in this repository is licensed under the GNU Affero General Public License v3.0 license.
 
-Please note that the mynewpack project is released with a [Contributor
-Code of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+## Contributing
+We welcome contributions from the open source community! If you're interested in collaborating, please review our [WFP-VAM contribution page](https://github.com/WFP-VAM/.github/blob/main/profile/CONTRIBUTING.md).
