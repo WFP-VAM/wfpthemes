@@ -79,7 +79,7 @@ rcsi_barplot <- rcsi_admin1_table_long %>% ggplot() +
     x = meanrCSI,
     y = reorder(ADMIN1Name_lab, meanrCSI),
   ),
-  fill = wfp_pal(n = 1, "pal_blue"),
+  fill = wfp_pal(n = 1, "blue_sequential"),
   width = 0.8
   ) +
   labs(

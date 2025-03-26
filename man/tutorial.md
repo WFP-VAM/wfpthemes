@@ -30,7 +30,7 @@ display_wfp_all()
 <img src="images/palettes.png" width="2100" />
 
 
-Since we have two response options and no need for a specific palette (like those for FCS, CARI, etc), we can use the main wfp palette - *pal_wfp_main* to create our graph.  Lets graph !
+Since we have two response options and no need for a specific palette (like those for FCS, CARI, etc), we can use the main wfp palette - *wfp_main_8cat* to create our graph.  Lets graph !
 
 ``` r
 HHSNoFood_admin1_barplot <- ggplot(HHSNoFood_admin1_table_long) +geom_bar(
@@ -42,7 +42,7 @@ HHSNoFood_admin1_barplot <- ggplot(HHSNoFood_admin1_table_long) +geom_bar(
     position = position_dodge(width = 0.6),
     vjust = -0.5, size = 2.5
   )+
-  scale_fill_wfp_b(palette = "pal_wfp_main") +
+  scale_fill_wfp_b(palette = "wfp_main_8cat") +
   labs(
     title = "Percentage of Households Reporting No Food to Eat | April 2024",
     subtitle = "Based on the question: 'In the past [4 weeks/30 days], was there ever no food to eat of
@@ -54,7 +54,7 @@ any kind in your house because of lack of resources to get food?'",
 plot(HHSNoFood_admin1_barplot)
 ```
 
-<img src="images/HHSNoFood_admin1_barplot_ugly.png" width="1500" />
+<img src="images/HHSNoFood_admin1_barplot_ugly" width="1500" />
 
 Lastly, we applied *theme_wfp()* but it still looks ugly so let's tweak the settings in *theme_wfp()* to get rid of the unnecessary clutter. Since we already know from the title description that the y axis is a percentage and the data labels contain the values, we can remove all the y-axis labels/text/grid lines. For the x-axis, all we need is to show the  axis text (the names of the states) - the rest we can keep blank.
 
@@ -70,4 +70,4 @@ HHSNoFood_admin1_barplot <- HHSNoFood_admin1_barplot + theme_wfp(
 plot(HHSNoFood_admin1_barplot)
 ```
 
-<img src="images/HHSNoFood_admin1_barplot_lessugly.png" width="1500" />
+<img src="images/HHSNoFood_admin1_barplot_less_uggly" width="1500" />

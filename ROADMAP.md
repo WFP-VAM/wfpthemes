@@ -4,14 +4,14 @@
 - [ ] Remove pal_navy
 - [ ] Remove pal_grey
 - [ ] Remove pal_orange
-- [ ] Reduce number of colors in pal_wfp_main to 7
-- [ ] Rename pal_stoplight_3pt to pal_foodsec_blue_3pt
-- [ ] Rename pal_stoplight_4pt to pal_foodsec_blue_4pt
-- [ ] Add pal_cari_area (4 colors)
-- [ ] Change color codes for pal_foodsec_blue_3pt
-- [ ] Change color codes for pal_foodsec_blue_4pt
-- [ ] Add pal_foodsec_red_4pt
-- [ ] Add pal_foodsec_red_3pt
-- [ ] Change color codes for pal_foodsec_blue_3pt
-- [ ] Change color codes for pal_foodsec_blue_4pt
-- [ ] Change color codes for pal_lcs and pal_fcsn (same as pal_foodsec_blue_3pt)
+- [ ] Reduce number of colors in wfp_main_8cat to 7
+- [ ] Rename pal_stoplight_3pt to food_security_blue_3cat
+- [ ] Rename pal_stoplight_4pt to food_security_blue_4cat
+- [ ] Add cari_area_palette (4 colors)
+- [ ] Change color codes for food_security_blue_3cat
+- [ ] Change color codes for food_security_blue_4cat
+- [ ] Add food_security_red_4cat
+- [ ] Add food_security_red_3cat
+- [ ] Change color codes for food_security_blue_3cat
+- [ ] Change color codes for food_security_blue_4cat
+- [ ] Change color codes for pal_lcs and pal_fcsn (same as food_security_blue_3cat)
