@@ -5,8 +5,6 @@
 main_blue <- "#007DBC"
 main_light_blue <- "#36B5C5"
 main_navy <- "#1A4262"
-main_green <- "#008868"
-main_light_green <- "#00B485"
 main_red <- "#982B56"
 main_light_red <- "#EF404C"
 main_grey <- "#999999"
@@ -39,16 +37,6 @@ pal_navy_wfp <- c(
   "navy7" = colorspace::darken(main_navy, 0.75)
 )
 
-## creates green color palette object
-pal_green_wfp <- c(
-  "green1" = colorspace::lighten(main_green, 0.75),
-  "green2" = colorspace::lighten(main_green, 0.50),
-  "green3" = colorspace::lighten(main_green, 0.25),
-  "green4" = main_green,
-  "green5" = colorspace::darken(main_green, 0.25),
-  "green6" = colorspace::darken(main_green, 0.50),
-  "green7" = colorspace::darken(main_green, 0.75)
-)
 
 ## creates red color palette object
 pal_red_wfp <- c(
@@ -86,7 +74,8 @@ pal_orange_wfp <- c(
 
 
 ## creates color palette object aligned with WFP corporate guidance
-pal_main <- c(main_blue, main_light_blue, main_navy, main_grey, main_green, main_light_green, main_orange, main_red, main_brown, main_light_red, main_tan)
+
+pal_main <- c(main_blue, main_light_blue, main_navy, main_grey, main_orange, main_red, main_brown, main_light_red, main_tan)
 
 ## creates color palette object aligned with ipc guidance
 # https://www.ipcinfo.org/fileadmin/user_upload/ipcinfo/docs/IPC_Acute_Food_Insecurity_Mapping_Guidelines.pdf
@@ -120,7 +109,7 @@ wfpcolors <- tibble::tibble(
     "pal_wfp_main",
     # Food security classification palettes
     "pal_ipc",
-    # To be renamed per ROADMAP.md
+    # Stoplight palettes
     "pal_stoplight_3pt", 
     "pal_stoplight_4pt",
     # Food consumption score palette
@@ -132,8 +121,6 @@ wfpcolors <- tibble::tibble(
     # Single-color sequential palettes
     "pal_blue",
     "pal_navy",
-    # To be removed per ROADMAP.md
-    "pal_green", 
     "pal_red",
     "pal_orange",
     "pal_grey",
@@ -145,22 +132,19 @@ wfpcolors <- tibble::tibble(
   # Palette types: qualitative (categorical), sequential (continuous), or diverging
   type = c(
     rep("qualitative", 7), # First 7 palettes are qualitative
-    rep("sequential", 6),  # Next 6 are sequential
+    rep("sequential", 5),  # Next 5 are sequential (removed pal_green)
     rep("diverging", 2)    # Last 2 are diverging
   ),
   
   # Minimum number of colors for each palette
-  min_n = 1,
+  min_n = rep(1, 14),
   
   # Maximum number of colors for each palette
   max_n = c(
-    c(10, 5, 3, 4, 3, 4, 4), # Max colors for qualitative palettes
-    rep(7, 6),               # Max colors for sequential palettes
-    rep(9, 2)                # Max colors for diverging palettes
+    10, 5, 3, 4, 3, 4, 4,  # Max colors for qualitative palettes
+    rep(7, 5),             # Max colors for sequential palettes (removed pal_green)
+    rep(9, 2)              # Max colors for diverging palettes
   ),
-  
-  # Color definitions for n=1 through n=10
-  # Each list element contains the colors for that palette size
   
   # Single color palettes (n=1)
   n1 = list(
@@ -173,7 +157,6 @@ wfpcolors <- tibble::tibble(
     pal_cari[1],           # Food secure
     pal_blue_wfp[4],       # Medium blue
     pal_navy_wfp[5],       # Dark navy
-    pal_green_wfp[4],      # Medium green (to be removed)
     pal_red_wfp[4],        # Medium red
     pal_orange_wfp[3],     # Medium orange
     pal_grey_wfp[4],       # Medium grey
@@ -191,7 +174,6 @@ wfpcolors <- tibble::tibble(
     pal_cari[1:2],                         # Food secure, marginally secure
     c(pal_blue_wfp[2], pal_blue_wfp[6]),   # Light and dark blue
     c(pal_navy_wfp[2], pal_navy_wfp[6]),   # Light and dark navy
-    c(pal_green_wfp[2], pal_green_wfp[6]), # Light and dark green (to be removed)
     c(pal_red_wfp[2], pal_red_wfp[6]),     # Light and dark red
     c(pal_orange_wfp[2], pal_orange_wfp[6]), # Light and dark orange
     c(pal_grey_wfp[2], pal_grey_wfp[6]),   # Light and dark grey
@@ -210,7 +192,6 @@ wfpcolors <- tibble::tibble(
     pal_cari[1:3],                         # Food secure, marginally secure, moderately insecure
     pal_blue_wfp[3:5],                     # Medium-light to medium-dark blue
     pal_navy_wfp[3:5],                     # Medium-light to medium-dark navy
-    pal_green_wfp[3:5],                    # Medium-light to medium-dark green (to be removed)
     pal_red_wfp[3:5],                      # Medium-light to medium-dark red
     pal_orange_wfp[3:5],                   # Medium-light to medium-dark orange
     pal_grey_wfp[3:5],                     # Medium-light to medium-dark grey
@@ -229,7 +210,6 @@ wfpcolors <- tibble::tibble(
     pal_cari[1:4],                         # Food secure through severely insecure
     pal_blue_wfp[2:5],                     # Light to dark blue range
     pal_navy_wfp[2:5],                     # Light to dark navy range
-    pal_green_wfp[2:5],                    # Light to dark green range (to be removed)
     pal_red_wfp[2:5],                      # Light to dark red range
     pal_orange_wfp[2:5],                   # Light to dark orange range
     pal_grey_wfp[2:5],                     # Light to dark grey range
@@ -237,7 +217,7 @@ wfpcolors <- tibble::tibble(
     c(pal_navy_wfp[5], pal_navy_wfp[3], pal_red_wfp[2], pal_red_wfp[4])  # Navy to red
   ),
 
-    # Five-color palettes (n=5)
+  # Five-color palettes (n=5)
   n5 = list(
     pal_main[1:5],                         # First 5 colors of main palette
     pal_ipc[1:5],                          # IPC 1-5 (full IPC scale)
@@ -248,7 +228,6 @@ wfpcolors <- tibble::tibble(
     NULL,                                  # CARI doesn't have 5 colors
     pal_blue_wfp[2:6],                     # Light to very dark blue range
     pal_navy_wfp[2:6],                     # Light to very dark navy range
-    pal_green_wfp[2:6],                    # Light to very dark green range (to be removed)
     pal_red_wfp[2:6],                      # Light to very dark red range
     pal_orange_wfp[2:6],                   # Light to very dark orange range
     pal_grey_wfp[2:6],                     # Light to very dark grey range
@@ -269,7 +248,6 @@ wfpcolors <- tibble::tibble(
     NULL,                                  # CARI doesn't have 6 colors
     pal_blue_wfp[1:6],                     # Very light to very dark blue range
     pal_navy_wfp[1:6],                     # Very light to very dark navy range
-    pal_green_wfp[1:6],                    # Very light to very dark green range (to be removed)
     pal_red_wfp[1:6],                      # Very light to very dark red range
     pal_orange_wfp[1:6],                   # Very light to very dark orange range
     pal_grey_wfp[1:6],                     # Very light to very dark grey range
@@ -288,7 +266,6 @@ wfpcolors <- tibble::tibble(
     NULL,                                  # CARI doesn't have 7 colors
     pal_blue_wfp[1:7],                     # Full blue range (very light to very dark)
     pal_navy_wfp[1:7],                     # Full navy range (very light to very dark)
-    pal_green_wfp[1:7],                    # Full green range (to be removed)
     pal_red_wfp[1:7],                      # Full red range
     pal_orange_wfp[1:7],                   # Full orange range
     pal_grey_wfp[1:7],                     # Full grey range
@@ -303,7 +280,7 @@ wfpcolors <- tibble::tibble(
     pal_main[1:8],                         # First 8 colors of main palette
     NULL, NULL, NULL,                      # IPC, Stoplight 3pt, Stoplight 4pt don't have 8 colors
     NULL, NULL, NULL,                      # FCSN, LCS, CARI don't have 8 colors
-    NULL, NULL, NULL, NULL, NULL, NULL,    # Sequential palettes don't have 8 colors
+    NULL, NULL, NULL, NULL, NULL,          # Sequential palettes don't have 8 colors
     c(pal_blue_wfp[5:2], pal_red_wfp[2:5]), # 8-color diverging blue-red
     c(pal_navy_wfp[5:2], pal_red_wfp[2:5])  # 8-color diverging navy-red
   ),
@@ -313,7 +290,7 @@ wfpcolors <- tibble::tibble(
     pal_main[1:9],                         # First 9 colors of main palette
     NULL, NULL, NULL,                      # IPC, Stoplight 3pt, Stoplight 4pt don't have 9 colors
     NULL, NULL, NULL,                      # FCSN, LCS, CARI don't have 9 colors
-    NULL, NULL, NULL, NULL, NULL, NULL,    # Sequential palettes don't have 9 colors
+    NULL, NULL, NULL, NULL, NULL,          # Sequential palettes don't have 9 colors
     # 9-color diverging blue-grey-red
     c(pal_blue_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5]),
     # 9-color diverging navy-grey-red
@@ -324,8 +301,7 @@ wfpcolors <- tibble::tibble(
   n10 = list(
     pal_main,                              # Full main palette (10 colors)
     NULL, NULL, NULL, NULL, NULL, NULL,    # Other qualitative palettes don't have 10 colors
-    NULL, NULL, NULL,                      # Sequential palettes don't have 10 colors
-    NULL, NULL, NULL,                      # Sequential palettes don't have 10 colors
+    NULL, NULL, NULL, NULL, NULL,          # Sequential palettes don't have 10 colors
     NULL, NULL                             # Diverging palettes don't have 10 colors
   )
 )
