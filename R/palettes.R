@@ -110,157 +110,227 @@ pal_lcs <-  c("#F1ECE8","#D5B868","#F37847","#C00000")
 pal_cari <-  c("#FFD7D7","#ff6e6e","#ff0000","#820000")
 
 ## creates object containing palette name, potential palette applications, and min/max number of categories palette can accommodate
-wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
-                                     "pal_ipc",
-                                     "pal_stoplight_3pt",
-                                     "pal_stoplight_4pt",
-                                     "pal_fcsn",
-                                     "pal_lcs",
-                                     "pal_cari",
-                                     "pal_blue",
-                                     "pal_navy",
-                                     "pal_green",
-                                     "pal_red",
-                                     "pal_orange",
-                                     "pal_grey",
-                                     "pal_blue_red",
-                                     "pal_navy_red"),
-                            type = c(rep("qualitative", 7),
-                                     rep("sequential", 6),
-                                     rep("diverging", 2)),
-                            min_n = 1,
-                            max_n = c(c(10, 5, 3, 4, 3, 4,4),
-                                      rep(7, 6),
-                                      rep(9, 2)),
-                            n1 = list(pal_main[1],
-                                      pal_ipc[1],
-                                      pal_stoplight_3pt[1],
-                                      pal_stoplight_4pt[1],
-                                      pal_fcsn[1],
-                                      pal_lcs[1],
-                                      pal_cari[1],
-                                      pal_blue_wfp[4],
-                                      pal_navy_wfp[5],
-                                      pal_green_wfp[4],
-                                      pal_red_wfp[4],
-                                      pal_orange_wfp[3],
-                                      pal_grey_wfp[4],
-                                      NULL, NULL),
-                            n2 = list(pal_main[1:2],
-                                      pal_ipc[1:2],
-                                      pal_stoplight_3pt[1:2],
-                                      pal_stoplight_4pt[1:2],
-                                      pal_fcsn[1:2],
-                                      pal_lcs[1:2],
-                                      pal_cari[1:2],
-                                      c(pal_blue_wfp[2], pal_blue_wfp[6]),
-                                      c(pal_navy_wfp[2], pal_navy_wfp[6]),
-                                      c(pal_green_wfp[2], pal_green_wfp[6]),
-                                      c(pal_red_wfp[2], pal_red_wfp[6]),
-                                      c(pal_orange_wfp[2], pal_orange_wfp[6]),
-                                      c(pal_grey_wfp[2], pal_grey_wfp[6]),
-                                      c(pal_blue_wfp[2], pal_red_wfp[6]),
-                                      c(pal_navy_wfp[2], pal_red_wfp[6])),
-                            n3 = list(pal_main[1:3],
-                                      pal_ipc[1:3],
-                                      pal_stoplight_3pt[1:3],
-                                      pal_stoplight_4pt[1:3],
-                                      pal_fcsn[1:3],
-                                      pal_lcs[1:3],
-                                      pal_cari[1:3],
-                                      pal_blue_wfp[3:5],
-                                      pal_navy_wfp[3:5],
-                                      pal_green_wfp[3:5],
-                                      pal_red_wfp[3:5],
-                                      pal_orange_wfp[3:5],
-                                      pal_grey_wfp[3:5],
-                                      c(pal_blue_wfp[4], pal_grey_wfp[1], pal_red_wfp[4]),
-                                      c(pal_navy_wfp[4], pal_grey_wfp[1], pal_red_wfp[4])),
-                            n4 = list(pal_main[1:4],
-                                      pal_ipc[1:4],
-                                      NULL,
-                                      pal_stoplight_4pt[1:4],
-                                      NULL,
-                                      pal_lcs[1:4],
-                                      pal_cari[1:4],
-                                      pal_blue_wfp[2:5],
-                                      pal_navy_wfp[2:5],
-                                      pal_green_wfp[2:5],
-                                      pal_red_wfp[2:5],
-                                      pal_orange_wfp[2:5],
-                                      pal_grey_wfp[2:5],
-                                      c(pal_blue_wfp[4], pal_blue_wfp[2],
-                                        pal_red_wfp[2], pal_red_wfp[4]),
-                                      c(pal_navy_wfp[5], pal_navy_wfp[3],
-                                        pal_red_wfp[2], pal_red_wfp[4])),
-                            n5 = list(pal_main[1:5],
-                                      pal_ipc[1:5],
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      pal_blue_wfp[2:6],
-                                      pal_navy_wfp[2:6],
-                                      pal_green_wfp[2:6],
-                                      pal_red_wfp[2:6],
-                                      pal_orange_wfp[2:6],
-                                      pal_grey_wfp[2:6],
-                                      c(pal_blue_wfp[5], pal_blue_wfp[2],
-                                        pal_grey_wfp[1],
-                                        pal_red_wfp[2], pal_red_wfp[5]),
-                                      c(pal_navy_wfp[5], pal_navy_wfp[3],
-                                        pal_grey_wfp[1],
-                                        pal_red_wfp[3], pal_red_wfp[5])),
-                            n6 = list(pal_main[1:6],
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      pal_blue_wfp[1:6],
-                                      pal_navy_wfp[1:6],
-                                      pal_green_wfp[1:6],
-                                      pal_red_wfp[1:6],
-                                      pal_orange_wfp[1:6],
-                                      pal_grey_wfp[1:6],
-                                      c(pal_blue_wfp[4:2],  pal_red_wfp[2:4]),
-                                      c(pal_navy_wfp[5:3], pal_red_wfp[2:4])),
-                            n7 = list(pal_main[1:7],
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      pal_blue_wfp[1:7],
-                                      pal_navy_wfp[1:7],
-                                      pal_green_wfp[1:7],
-                                      pal_red_wfp[1:7],
-                                      pal_orange_wfp[1:7],
-                                      pal_grey_wfp[1:7],
-                                      c(pal_blue_wfp[4:2],  pal_grey_wfp[1], pal_red_wfp[2:4]),
-                                      c(pal_navy_wfp[5:3], pal_grey_wfp[1], pal_red_wfp[2:4])),
-                            n8 = list(pal_main[1:8],
-                                      NULL,NULL, NULL,
-                                      NULL, NULL, NULL,
-                                      NULL, NULL, NULL, NULL, NULL, NULL,
-                                      c(pal_blue_wfp[5:2], pal_red_wfp[2:5]),
-                                      c(pal_navy_wfp[5:2], pal_red_wfp[2:5])),
-                            n9 = list(pal_main[1:9],
-                                      NULL, NULL, NULL,
-                                      NULL, NULL, NULL,
-                                      NULL, NULL, NULL, NULL, NULL, NULL,
-                                      c(pal_blue_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5]),
-                                      c(pal_navy_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5])),
-                            n10 = list(pal_main,
-                                       NULL, NULL, NULL, NULL, NULL, NULL,
-                                       NULL, NULL, NULL,
-                                       NULL, NULL, NULL,
-                                       NULL, NULL))
 
+# Define the main color palette information table
+# This table maps palette names to their properties and color values for different sizes
+wfpcolors <- tibble::tibble(
+  # Palette names - includes standard WFP palettes and specialized indicator palettes
+  name = c(
+    # Main WFP corporate palette
+    "pal_wfp_main",
+    # Food security classification palettes
+    "pal_ipc",
+    # To be renamed per ROADMAP.md
+    "pal_stoplight_3pt", 
+    "pal_stoplight_4pt",
+    # Food consumption score palette
+    "pal_fcsn",
+    # Livelihood coping strategies palette
+    "pal_lcs",
+    # Consolidated Approach for Reporting Indicators palette
+    "pal_cari",
+    # Single-color sequential palettes
+    "pal_blue",
+    "pal_navy",
+    # To be removed per ROADMAP.md
+    "pal_green", 
+    "pal_red",
+    "pal_orange",
+    "pal_grey",
+    # Diverging palettes
+    "pal_blue_red",
+    "pal_navy_red"
+  ),
+  
+  # Palette types: qualitative (categorical), sequential (continuous), or diverging
+  type = c(
+    rep("qualitative", 7), # First 7 palettes are qualitative
+    rep("sequential", 6),  # Next 6 are sequential
+    rep("diverging", 2)    # Last 2 are diverging
+  ),
+  
+  # Minimum number of colors for each palette
+  min_n = 1,
+  
+  # Maximum number of colors for each palette
+  max_n = c(
+    c(10, 5, 3, 4, 3, 4, 4), # Max colors for qualitative palettes
+    rep(7, 6),               # Max colors for sequential palettes
+    rep(9, 2)                # Max colors for diverging palettes
+  ),
+  
+  # Color definitions for n=1 through n=10
+  # Each list element contains the colors for that palette size
+  
+  # Single color palettes (n=1)
+  n1 = list(
+    pal_main[1],           # Main WFP blue
+    pal_ipc[1],            # IPC minimal/none
+    pal_stoplight_3pt[1],  # Green (good)
+    pal_stoplight_4pt[1],  # Green (good)
+    pal_fcsn[1],           # Acceptable
+    pal_lcs[1],            # No coping
+    pal_cari[1],           # Food secure
+    pal_blue_wfp[4],       # Medium blue
+    pal_navy_wfp[5],       # Dark navy
+    pal_green_wfp[4],      # Medium green (to be removed)
+    pal_red_wfp[4],        # Medium red
+    pal_orange_wfp[3],     # Medium orange
+    pal_grey_wfp[4],       # Medium grey
+    NULL, NULL             # Diverging palettes need at least 2 colors
+  ),
+  
+  # Two-color palettes (n=2)
+  n2 = list(
+    pal_main[1:2],                         # Main blue, light blue
+    pal_ipc[1:2],                          # IPC 1-2
+    pal_stoplight_3pt[1:2],                # Green, yellow
+    pal_stoplight_4pt[1:2],                # Green, yellow
+    pal_fcsn[1:2],                         # Acceptable, borderline
+    pal_lcs[1:2],                          # No coping, stress
+    pal_cari[1:2],                         # Food secure, marginally secure
+    c(pal_blue_wfp[2], pal_blue_wfp[6]),   # Light and dark blue
+    c(pal_navy_wfp[2], pal_navy_wfp[6]),   # Light and dark navy
+    c(pal_green_wfp[2], pal_green_wfp[6]), # Light and dark green (to be removed)
+    c(pal_red_wfp[2], pal_red_wfp[6]),     # Light and dark red
+    c(pal_orange_wfp[2], pal_orange_wfp[6]), # Light and dark orange
+    c(pal_grey_wfp[2], pal_grey_wfp[6]),   # Light and dark grey
+    c(pal_blue_wfp[2], pal_red_wfp[6]),    # Light blue to dark red
+    c(pal_navy_wfp[2], pal_red_wfp[6])     # Light navy to dark red
+  ),
+  
+  # Three-color palettes (n=3)
+  n3 = list(
+    pal_main[1:3],                         # Main blue, light blue, navy
+    pal_ipc[1:3],                          # IPC 1-3
+    pal_stoplight_3pt[1:3],                # Green, yellow, red
+    pal_stoplight_4pt[1:3],                # Green, yellow, orange
+    pal_fcsn[1:3],                         # Acceptable, borderline, poor
+    pal_lcs[1:3],                          # No coping, stress, crisis
+    pal_cari[1:3],                         # Food secure, marginally secure, moderately insecure
+    pal_blue_wfp[3:5],                     # Medium-light to medium-dark blue
+    pal_navy_wfp[3:5],                     # Medium-light to medium-dark navy
+    pal_green_wfp[3:5],                    # Medium-light to medium-dark green (to be removed)
+    pal_red_wfp[3:5],                      # Medium-light to medium-dark red
+    pal_orange_wfp[3:5],                   # Medium-light to medium-dark orange
+    pal_grey_wfp[3:5],                     # Medium-light to medium-dark grey
+    c(pal_blue_wfp[4], pal_grey_wfp[1], pal_red_wfp[4]), # Blue-neutral-red
+    c(pal_navy_wfp[4], pal_grey_wfp[1], pal_red_wfp[4])  # Navy-neutral-red
+  ),
+  
+  # Four-color palettes (n=4)
+  n4 = list(
+    pal_main[1:4],                         # Main blue, light blue, navy, grey
+    pal_ipc[1:4],                          # IPC 1-4
+    NULL,                                  # Stoplight 3pt doesn't have 4 colors
+    pal_stoplight_4pt[1:4],                # Green, yellow, orange, red
+    NULL,                                  # FCSN doesn't have 4 colors
+    pal_lcs[1:4],                          # No coping, stress, crisis, emergency
+    pal_cari[1:4],                         # Food secure through severely insecure
+    pal_blue_wfp[2:5],                     # Light to dark blue range
+    pal_navy_wfp[2:5],                     # Light to dark navy range
+    pal_green_wfp[2:5],                    # Light to dark green range (to be removed)
+    pal_red_wfp[2:5],                      # Light to dark red range
+    pal_orange_wfp[2:5],                   # Light to dark orange range
+    pal_grey_wfp[2:5],                     # Light to dark grey range
+    c(pal_blue_wfp[4], pal_blue_wfp[2], pal_red_wfp[2], pal_red_wfp[4]), # Blue to red
+    c(pal_navy_wfp[5], pal_navy_wfp[3], pal_red_wfp[2], pal_red_wfp[4])  # Navy to red
+  ),
 
+    # Five-color palettes (n=5)
+  n5 = list(
+    pal_main[1:5],                         # First 5 colors of main palette
+    pal_ipc[1:5],                          # IPC 1-5 (full IPC scale)
+    NULL,                                  # Stoplight 3pt doesn't have 5 colors
+    NULL,                                  # Stoplight 4pt doesn't have 5 colors
+    NULL,                                  # FCSN doesn't have 5 colors
+    NULL,                                  # LCS doesn't have 5 colors
+    NULL,                                  # CARI doesn't have 5 colors
+    pal_blue_wfp[2:6],                     # Light to very dark blue range
+    pal_navy_wfp[2:6],                     # Light to very dark navy range
+    pal_green_wfp[2:6],                    # Light to very dark green range (to be removed)
+    pal_red_wfp[2:6],                      # Light to very dark red range
+    pal_orange_wfp[2:6],                   # Light to very dark orange range
+    pal_grey_wfp[2:6],                     # Light to very dark grey range
+    # 5-color diverging blue-grey-red
+    c(pal_blue_wfp[5], pal_blue_wfp[2], pal_grey_wfp[1], pal_red_wfp[2], pal_red_wfp[5]),
+    # 5-color diverging navy-grey-red
+    c(pal_navy_wfp[5], pal_navy_wfp[3], pal_grey_wfp[1], pal_red_wfp[3], pal_red_wfp[5])
+  ),
+  
+  # Six-color palettes (n=6)
+  n6 = list(
+    pal_main[1:6],                         # First 6 colors of main palette
+    NULL,                                  # IPC doesn't have 6 colors
+    NULL,                                  # Stoplight 3pt doesn't have 6 colors
+    NULL,                                  # Stoplight 4pt doesn't have 6 colors
+    NULL,                                  # FCSN doesn't have 6 colors
+    NULL,                                  # LCS doesn't have 6 colors
+    NULL,                                  # CARI doesn't have 6 colors
+    pal_blue_wfp[1:6],                     # Very light to very dark blue range
+    pal_navy_wfp[1:6],                     # Very light to very dark navy range
+    pal_green_wfp[1:6],                    # Very light to very dark green range (to be removed)
+    pal_red_wfp[1:6],                      # Very light to very dark red range
+    pal_orange_wfp[1:6],                   # Very light to very dark orange range
+    pal_grey_wfp[1:6],                     # Very light to very dark grey range
+    c(pal_blue_wfp[4:2], pal_red_wfp[2:4]), # 6-color diverging blue-red
+    c(pal_navy_wfp[5:3], pal_red_wfp[2:4])  # 6-color diverging navy-red
+  ),
+  
+  # Seven-color palettes (n=7)
+  n7 = list(
+    pal_main[1:7],                         # First 7 colors of main palette
+    NULL,                                  # IPC doesn't have 7 colors
+    NULL,                                  # Stoplight 3pt doesn't have 7 colors
+    NULL,                                  # Stoplight 4pt doesn't have 7 colors
+    NULL,                                  # FCSN doesn't have 7 colors
+    NULL,                                  # LCS doesn't have 7 colors
+    NULL,                                  # CARI doesn't have 7 colors
+    pal_blue_wfp[1:7],                     # Full blue range (very light to very dark)
+    pal_navy_wfp[1:7],                     # Full navy range (very light to very dark)
+    pal_green_wfp[1:7],                    # Full green range (to be removed)
+    pal_red_wfp[1:7],                      # Full red range
+    pal_orange_wfp[1:7],                   # Full orange range
+    pal_grey_wfp[1:7],                     # Full grey range
+    # 7-color diverging blue-grey-red
+    c(pal_blue_wfp[4:2], pal_grey_wfp[1], pal_red_wfp[2:4]),
+    # 7-color diverging navy-grey-red
+    c(pal_navy_wfp[5:3], pal_grey_wfp[1], pal_red_wfp[2:4])
+  ),
+  
+  # Eight-color palettes (n=8)
+  n8 = list(
+    pal_main[1:8],                         # First 8 colors of main palette
+    NULL, NULL, NULL,                      # IPC, Stoplight 3pt, Stoplight 4pt don't have 8 colors
+    NULL, NULL, NULL,                      # FCSN, LCS, CARI don't have 8 colors
+    NULL, NULL, NULL, NULL, NULL, NULL,    # Sequential palettes don't have 8 colors
+    c(pal_blue_wfp[5:2], pal_red_wfp[2:5]), # 8-color diverging blue-red
+    c(pal_navy_wfp[5:2], pal_red_wfp[2:5])  # 8-color diverging navy-red
+  ),
+  
+  # Nine-color palettes (n=9)
+  n9 = list(
+    pal_main[1:9],                         # First 9 colors of main palette
+    NULL, NULL, NULL,                      # IPC, Stoplight 3pt, Stoplight 4pt don't have 9 colors
+    NULL, NULL, NULL,                      # FCSN, LCS, CARI don't have 9 colors
+    NULL, NULL, NULL, NULL, NULL, NULL,    # Sequential palettes don't have 9 colors
+    # 9-color diverging blue-grey-red
+    c(pal_blue_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5]),
+    # 9-color diverging navy-grey-red
+    c(pal_navy_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5])
+  ),
+  
+  # Ten-color palettes (n=10)
+  n10 = list(
+    pal_main,                              # Full main palette (10 colors)
+    NULL, NULL, NULL, NULL, NULL, NULL,    # Other qualitative palettes don't have 10 colors
+    NULL, NULL, NULL,                      # Sequential palettes don't have 10 colors
+    NULL, NULL, NULL,                      # Sequential palettes don't have 10 colors
+    NULL, NULL                             # Diverging palettes don't have 10 colors
+  )
+)
+
+# Convert tibble to data frame for compatibility
 wfpcolors <- as.data.frame(wfpcolors)
 
 
