@@ -77,12 +77,6 @@ pal_ipc <- c("#CDFACD","#FAE61E","#E67800","#C80000", "#640000")
 
 
 ## creates color palette object aligned with indicator compendium guidance
-pal_fcsn <-  c("#92D050","#E46C0A","#C00000")
-
-## creates color palette object aligned with indicator compendium guidance
-pal_lcs <-  c("#F1ECE8","#D5B868","#F37847","#C00000")
-
-## creates color palette object aligned with indicator compendium guidance
 pal_cari <-  c("#FFD7D7","#ff6e6e","#ff0000","#820000")
 
 ## creates color palette object aligned with food security guidance
@@ -113,12 +107,10 @@ pal_main <- c(main_blue, main_light_blue, main_navy, main_ivory, main_orange, ma
 
 # Define the main color palette information table
 # This table maps palette names to their properties and color values for different sizes
-# Define the main color palette information table
-# This table maps palette names to their properties and color values for different sizes
 wfpcolors <- tibble::tibble(
   # Palette names - includes standard WFP palettes and specialized indicator palettes
   name = c(
-    # Main WFP corporate palette (reduced to 7 colors per roadmap)
+    # Main WFP corporate palette
     "pal_wfp_main",
     # Food security classification palettes
     "pal_ipc",
@@ -128,10 +120,7 @@ wfpcolors <- tibble::tibble(
     # Added new food security red palettes per roadmap
     "pal_foodsec_red_3pt",
     "pal_foodsec_red_4pt",
-    # Food consumption score palette
-    "pal_fcsn",
-    # Livelihood coping strategies palette
-    "pal_lcs",
+    # Removed pal_fcsn and pal_lcs as requested
     # Consolidated Approach for Reporting Indicators palettes
     "pal_cari",
     "pal_cari_area", # Added per roadmap
@@ -146,34 +135,32 @@ wfpcolors <- tibble::tibble(
   
   # Palette types: qualitative (categorical), sequential (continuous), or diverging
   type = c(
-    rep("qualitative", 10), # First 10 palettes are qualitative (added 3 new ones)
-    rep("sequential", 2),   # Next 2 are sequential (removed 3 per roadmap)
-    rep("diverging", 2)     # Last 2 are diverging
+    rep("qualitative", 8), # First 8 palettes are qualitative (removed 2)
+    rep("sequential", 2),  # Next 2 are sequential
+    rep("diverging", 2)    # Last 2 are diverging
   ),
   
   # Minimum number of colors for each palette
-  min_n = rep(1, 14),
+  min_n = rep(1, 12),      # Reduced from 14 to 12
   
   # Maximum number of colors for each palette
   max_n = c(
-    7, 5, 3, 4, 3, 4, 3, 4, 4, 4,  # Max colors for qualitative palettes (reduced main to 7)
-    rep(7, 2),                     # Max colors for sequential palettes (reduced from 5)
-    rep(9, 2)                      # Max colors for diverging palettes
+    7, 5, 3, 4, 3, 4, 4, 4,  # Max colors for qualitative palettes (removed 2)
+    rep(7, 2),               # Max colors for sequential palettes
+    rep(9, 2)                # Max colors for diverging palettes
   ),
   
-  # Define new color codes for the renamed/new palettes
-  # These are placeholders - you'll need to replace with actual color codes
+  # Single color palettes (n=1)
   n1 = list(
     pal_main[1],           # Main WFP blue
     pal_ipc[1],            # IPC minimal/none
-    pal_foodsec_blue_3pt[1],             # foodsec_blue_3pt (placeholder - update with new color)
-    pal_foodsec_blue_4pt[1],             # foodsec_blue_4pt (placeholder - update with new color)
-    pal_foodsec_red_3pt[1],             # foodsec_red_3pt (placeholder - update with new color)
-    pal_foodsec_red_4pt[1],             # foodsec_red_4pt (placeholder - update with new color)
-    pal_fcsn[1],             # FCSN (update to match foodsec_blue_3pt)
-    pal_lcs[1],             # LCS (update to match foodsec_blue_3pt)
+    pal_foodsec_blue_3pt[1], # First color
+    pal_foodsec_blue_4pt[1], # First color
+    pal_foodsec_red_3pt[1],  # First color
+    pal_foodsec_red_4pt[1],  # First color
+    # Removed pal_fcsn and pal_lcs
     pal_cari[1],           # CARI
-    pal_cari[1],           # CARI area (new)
+    pal_cari_area[1],      # CARI area
     pal_blue_wfp[4],       # Medium blue
     pal_red_wfp[4],        # Medium red
     NULL, NULL             # Diverging palettes need at least 2 colors
@@ -183,12 +170,11 @@ wfpcolors <- tibble::tibble(
   n2 = list(
     pal_main[1:2],                         # Main blue, light blue
     pal_ipc[1:2],                          # IPC 1-2
-    pal_foodsec_blue_3pt[1:2],             # Using actual palette values
-    pal_foodsec_blue_4pt[1:2],             # Using actual palette values
-    pal_foodsec_red_3pt[1:2],              # Using actual palette values
-    pal_foodsec_red_4pt[1:2],              # Using actual palette values
-    pal_fcsn[1:2],                         # Using actual palette values
-    pal_lcs[1:2],                          # Using actual palette values
+    pal_foodsec_blue_3pt[1:2],             # First 2 colors
+    pal_foodsec_blue_4pt[1:2],             # First 2 colors
+    pal_foodsec_red_3pt[1:2],              # First 2 colors
+    pal_foodsec_red_4pt[1:2],              # First 2 colors
+    # Removed pal_fcsn and pal_lcs
     pal_cari[1:2],                         # CARI
     pal_cari_area[1:2],                    # CARI area
     c(pal_blue_wfp[2], pal_blue_wfp[6]),   # Light and dark blue
@@ -196,18 +182,16 @@ wfpcolors <- tibble::tibble(
     c(pal_blue_wfp[2], pal_red_wfp[6]),    # Light blue to dark red
     c(pal_navy_wfp[2], pal_red_wfp[6])     # Light navy to dark red
   ),
-
   
   # Three-color palettes (n=3)
   n3 = list(
     pal_main[1:3],                         # Main blue, light blue, navy
     pal_ipc[1:3],                          # IPC 1-3
-    pal_foodsec_blue_3pt,                  # Using full 3-color palette
-    pal_foodsec_blue_4pt[1:3],             # Using first 3 colors
-    pal_foodsec_red_3pt,                   # Using full 3-color palette
-    pal_foodsec_red_4pt[1:3],              # Using first 3 colors
-    pal_fcsn,                              # Using full 3-color palette
-    pal_lcs[1:3],                          # Using first 3 colors
+    pal_foodsec_blue_3pt,                  # Full 3-color palette
+    pal_foodsec_blue_4pt[1:3],             # First 3 colors
+    pal_foodsec_red_3pt,                   # Full 3-color palette
+    pal_foodsec_red_4pt[1:3],              # First 3 colors
+    # Removed pal_fcsn and pal_lcs
     pal_cari[1:3],                         # CARI
     pal_cari_area[1:3],                    # CARI area
     pal_blue_wfp[3:5],                     # Medium-light to medium-dark blue
@@ -216,18 +200,17 @@ wfpcolors <- tibble::tibble(
     c(pal_navy_wfp[4], pal_grey_wfp[1], pal_red_wfp[4])  # Navy-neutral-red
   ),
   
- # Four-color palettes (n=4)
+  # Four-color palettes (n=4)
   n4 = list(
     pal_main[1:4],                         # Main blue, light blue, navy, grey
     pal_ipc[1:4],                          # IPC 1-4
     NULL,                                  # foodsec_blue_3pt doesn't have 4 colors
-    pal_foodsec_blue_4pt,                  # Using full 4-color palette
+    pal_foodsec_blue_4pt,                  # Full 4-color palette
     NULL,                                  # foodsec_red_3pt doesn't have 4 colors
-    pal_foodsec_red_4pt,                   # Using full 4-color palette
-    NULL,                                  # FCSN doesn't have 4 colors
-    pal_lcs,                               # Using full 4-color palette
-    pal_cari,                              # Using full 4-color palette
-    pal_cari_area,                         # Using full 4-color palette
+    pal_foodsec_red_4pt,                   # Full 4-color palette
+    # Removed pal_fcsn and pal_lcs
+    pal_cari,                              # Full 4-color palette
+    pal_cari_area,                         # Full 4-color palette
     pal_blue_wfp[2:5],                     # Light to dark blue range
     pal_red_wfp[2:5],                      # Light to dark red range
     c(pal_blue_wfp[4], pal_blue_wfp[2], pal_red_wfp[2], pal_red_wfp[4]), # Blue to red
@@ -242,8 +225,7 @@ wfpcolors <- tibble::tibble(
     NULL,                                  # foodsec_blue_4pt doesn't have 5 colors
     NULL,                                  # foodsec_red_3pt doesn't have 5 colors
     NULL,                                  # foodsec_red_4pt doesn't have 5 colors
-    NULL,                                  # FCSN doesn't have 5 colors
-    NULL,                                  # LCS doesn't have 5 colors
+    # Removed pal_fcsn and pal_lcs
     NULL,                                  # CARI doesn't have 5 colors
     NULL,                                  # CARI area doesn't have 5 colors
     pal_blue_wfp[2:6],                     # Light to very dark blue range
@@ -262,8 +244,7 @@ wfpcolors <- tibble::tibble(
     NULL,                                  # foodsec_blue_4pt doesn't have 6 colors
     NULL,                                  # foodsec_red_3pt doesn't have 6 colors
     NULL,                                  # foodsec_red_4pt doesn't have 6 colors
-    NULL,                                  # FCSN doesn't have 6 colors
-    NULL,                                  # LCS doesn't have 6 colors
+    # Removed pal_fcsn and pal_lcs
     NULL,                                  # CARI doesn't have 6 colors
     NULL,                                  # CARI area doesn't have 6 colors
     pal_blue_wfp[1:6],                     # Very light to very dark blue range
@@ -280,8 +261,7 @@ wfpcolors <- tibble::tibble(
     NULL,                                  # foodsec_blue_4pt doesn't have 7 colors
     NULL,                                  # foodsec_red_3pt doesn't have 7 colors
     NULL,                                  # foodsec_red_4pt doesn't have 7 colors
-    NULL,                                  # FCSN doesn't have 7 colors
-    NULL,                                  # LCS doesn't have 7 colors
+    # Removed pal_fcsn and pal_lcs
     NULL,                                  # CARI doesn't have 7 colors
     NULL,                                  # CARI area doesn't have 7 colors
     pal_blue_wfp[1:7],                     # Full blue range (very light to very dark)
@@ -296,8 +276,9 @@ wfpcolors <- tibble::tibble(
   n8 = list(
     NULL,                                  # Main palette reduced to 7 colors
     NULL, NULL, NULL,                      # IPC, foodsec_blue_3pt, foodsec_blue_4pt don't have 8 colors
-    NULL, NULL, NULL,                      # foodsec_red_3pt, foodsec_red_4pt, FCSN don't have 8 colors
-    NULL, NULL, NULL,                      # LCS, CARI, CARI area don't have 8 colors
+    NULL, NULL,                            # foodsec_red_3pt, foodsec_red_4pt don't have 8 colors
+    # Removed pal_fcsn and pal_lcs
+    NULL, NULL,                            # CARI, CARI area don't have 8 colors
     NULL, NULL,                            # Sequential palettes don't have 8 colors
     c(pal_blue_wfp[5:2], pal_red_wfp[2:5]), # 8-color diverging blue-red
     c(pal_navy_wfp[5:2], pal_red_wfp[2:5])  # 8-color diverging navy-red
@@ -307,8 +288,9 @@ wfpcolors <- tibble::tibble(
   n9 = list(
     NULL,                                  # Main palette reduced to 7 colors
     NULL, NULL, NULL,                      # IPC, foodsec_blue_3pt, foodsec_blue_4pt don't have 9 colors
-    NULL, NULL, NULL,                      # foodsec_red_3pt, foodsec_red_4pt, FCSN don't have 9 colors
-    NULL, NULL, NULL,                      # LCS, CARI, CARI area don't have 9 colors
+    NULL, NULL,                            # foodsec_red_3pt, foodsec_red_4pt don't have 9 colors
+    # Removed pal_fcsn and pal_lcs
+    NULL, NULL,                            # CARI, CARI area don't have 9 colors
     NULL, NULL,                            # Sequential palettes don't have 9 colors
     # 9-color diverging blue-grey-red
     c(pal_blue_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5]),
@@ -320,15 +302,14 @@ wfpcolors <- tibble::tibble(
   n10 = list(
     NULL,                                  # Main palette reduced to 7 colors
     NULL, NULL, NULL,                      # IPC, foodsec_blue_3pt, foodsec_blue_4pt don't have 10 colors
-    NULL, NULL, NULL,                      # foodsec_red_3pt, foodsec_red_4pt, FCSN don't have 10 colors
-    NULL, NULL, NULL,                      # LCS, CARI, CARI area don't have 10 colors
+    NULL, NULL,                            # foodsec_red_3pt, foodsec_red_4pt don't have 10 colors
+    # Removed pal_fcsn and pal_lcs
+    NULL, NULL,                            # CARI, CARI area don't have 10 colors
     NULL, NULL,                            # Sequential palettes don't have 10 colors
     NULL, NULL                             # Diverging palettes don't have 10 colors
   )
 )
 
-# Convert tibble to data frame for compatibility
-wfpcolors <- as.data.frame(wfpcolors)
 
 
 
