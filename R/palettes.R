@@ -3,14 +3,13 @@
 ##########################################################
 
 main_blue <- "#007DBC"
-main_light_blue <- "#36B5C5"
-main_navy <- "#1A4262"
-main_red <- "#982B56"
-main_light_red <- "#EF404C"
-main_grey <- "#999999"
-main_light_grey <- "#E6E6E6"
-main_orange <- "#F47847"
-main_brown <- "#B79F8D"
+main_light_blue <- "#008EB2"
+main_navy <- "#002F5A"
+main_red <- "#E3002B"
+main_light_red <- "#ECE1B1"
+main_ivory <- "#ECE1B1"
+main_orange <- "#E67536"
+main_purple <- "#810054"
 main_tan <- "#ECDFBB"
 main_black <- "#000000"
 main_white <- "#FFFFFF"
@@ -51,13 +50,13 @@ pal_red_wfp <- c(
 
 ## creates grey color palette object
 pal_grey_wfp <- c(
-  "grey1" = colorspace::lighten(main_grey, 0.75),
-  "grey2" = colorspace::lighten(main_grey, 0.50),
-  "grey3" = colorspace::lighten(main_grey, 0.25),
-  "grey4" = main_grey,
-  "grey5" = colorspace::darken(main_grey, 0.25),
-  "grey6" = colorspace::darken(main_grey, 0.50),
-  "grey7" = colorspace::darken(main_grey, 0.75)
+  "grey1" = colorspace::lighten(main_ivory, 0.75),
+  "grey2" = colorspace::lighten(main_ivory, 0.50),
+  "grey3" = colorspace::lighten(main_ivory, 0.25),
+  "grey4" = main_ivory,
+  "grey5" = colorspace::darken(main_ivory, 0.25),
+  "grey6" = colorspace::darken(main_ivory, 0.50),
+  "grey7" = colorspace::darken(main_ivory, 0.75)
 )
 
 ## creates orange color palette object
@@ -76,12 +75,6 @@ pal_orange_wfp <- c(
 
 pal_ipc <- c("#CDFACD","#FAE61E","#E67800","#C80000", "#640000")
 
-## creates color palette object aligned with ipc guidance
-# https://docs.wfp.org/api/documents/WFP-0000134704/download/?_ga=2.91951514.145906710.1681992709-313551633.1680773110
-# pal_stoplight_3pt <- c("#92D050","#FFFF00","#FF0000")
-
-## creates color palette object aligned with ipc guidance
-# pal_stoplight_4pt <- c("#92D050","#FFFF00","#FFC000","#FF0000")
 
 ## creates color palette object aligned with indicator compendium guidance
 pal_fcsn <-  c("#92D050","#E46C0A","#C00000")
@@ -92,30 +85,27 @@ pal_lcs <-  c("#F1ECE8","#D5B868","#F37847","#C00000")
 ## creates color palette object aligned with indicator compendium guidance
 pal_cari <-  c("#FFD7D7","#ff6e6e","#ff0000","#820000")
 
-
-
 ## creates color palette object aligned with food security guidance
 # Renamed from pal_stoplight_3pt to pal_foodsec_blue_3pt
-pal_foodsec_blue_3pt <- c("#92D050","#FFFF00","#FF0000")  # Update colors as needed
+pal_foodsec_blue_3pt <- c("#B4CFED","#007DBC","#002F5A")  # Update colors as needed
 
 ## creates color palette object aligned with food security guidance
 # Renamed from pal_stoplight_4pt to pal_foodsec_blue_4pt
-pal_foodsec_blue_4pt <- c("#92D050","#FFFF00","#FFC000","#FF0000")  # Update colors as needed
+pal_foodsec_blue_4pt <- c("#B4CFED","#73A5D4","#007DBC","#002F5A")  # Update colors as needed
 
 ## creates new red food security palette with 3 points
-pal_foodsec_red_3pt <- c("#FF0000","#FFC000","#92D050")  # Update colors as needed
+pal_foodsec_red_3pt <- c("#ECE1B1","#E67536","#E3002B")  # Update colors as needed
 
 ## creates new red food security palette with 4 points
-pal_foodsec_red_4pt <- c("#FF0000","#FFC000","#FFFF00","#92D050")  # Update colors as needed
+pal_foodsec_red_4pt <- c("#ECE1B1","#E6B068","#E67536","#E3002B")  # Update colors as needed
 
 ## creates new CARI area palette
-pal_cari_area <- c("#FFD7D7","#ff6e6e","#ff0000","#820000")  # Update colors as needed
-
+pal_cari_area <- c("#FFFFD4","#EAE297","#D7C55A","#C7A600")  # Update colors as needed
 
 
 ## creates color palette object aligned with WFP corporate guidance
 
-pal_main <- c(main_blue, main_light_blue, main_navy, main_grey, main_orange, main_red, main_brown, main_light_red, main_tan)
+pal_main <- c(main_blue, main_light_blue, main_navy, main_ivory, main_orange, main_red, main_purple, main_light_red, main_tan)
 
 
 
