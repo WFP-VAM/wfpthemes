@@ -1,6 +1,4 @@
-##########################################################
-## Creates a function that stores a WFP ggplot theme
-##########################################################
+# Creates a function that stores a WFP ggplot theme ----
 
 #' theme_wfp
 #'
@@ -24,11 +22,7 @@
 #' @param legend_title Logical. Whether to display the legend title. Default is FALSE.
 #'
 #' @return A ggplot2 theme object customized for WFP visualizations.
-#' @examples
-#' library(ggplot2)
-#' ggplot(mtcars, aes(x = wt, y = mpg)) +
-#'   geom_point() +
-#'   theme_wfp()
+#' @export
 theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
                       rel_tiny = 6 / 10, rel_small = 8 / 10,  rel_normal = 10 / 10, rel_large = 12 / 10, rel_xlarge = 14 / 10, rel_xxlarge = 16 / 10,
                       grid = TRUE, axis = "x", axis_text = TRUE, axis_title = TRUE,
@@ -301,9 +295,7 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
   ret
 }
 
-##########################################################
-## Creates a function that updates the default geom font family to Open Sans
-##########################################################
+## Creates a function that updates the default geom font family to Open Sans ----
 
 #' update_geom_font_defaults
 #'
@@ -315,11 +307,7 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
 #' @param color Character. Font color to use. Default is "#191919" (dark grey).
 #'
 #' @return Updates the default settings for text and label geoms in ggplot2.
-#' @examples
-#' update_geom_font_defaults(family = "Arial", size = 4)
-#' ggplot(mtcars, aes(x = wt, y = mpg, label = rownames(mtcars))) +
-#'   geom_text() +
-#'   theme_wfp()
+#' @export
 update_geom_font_defaults <- function(family = "Open Sans", face = "plain", size = 3.5,
                                       color = "#191919") {
   ggplot2::update_geom_defaults("text", list(family = family, face = face, size = size, color = color))

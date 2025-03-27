@@ -1,5 +1,5 @@
 #########################################################
-## Creates discrete color palettes for visualization of categorical values
+# Creates discrete color palettes for visualization of categorical values
 ##########################################################
 
 main_blue <- "#007DBC"
@@ -306,22 +306,20 @@ wfpcolors <- tibble::tibble(
 ## Creates continuous color palettes for vizualization of continuous values
 ##########################################################
 
+
 #' scale_colour_wfp_a
 #'
-#' Creates a continuous color scale for ggplot2 visualizations.
+#' Creates a continuous color scale for ggplot2 visualizations using WFP color palettes.
 #'
+#' @param ... Additional arguments passed to `continuous_scale`.
 #' @param type Character. Type of palette to use ("sequential", "qualitative", etc.). Default is "sequential".
 #' @param palette Numeric or Character. Palette index or name. Default is 1.
 #' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
 #' @param na.value Character. Color for missing values. Default is "#E9E9E9".
 #' @param guide Character. Type of legend guide ("colourbar" or "legend"). Default is "colourbar".
-#' @param ... Additional arguments passed to `continuous_scale`.
 #'
 #' @return A ggplot2 continuous color scale.
-#' @examples
-#' ggplot(mtcars, aes(x = wt, y = mpg, color = mpg)) +
-#'   geom_point() +
-#'   scale_colour_wfp_a()
+#' @export
 scale_colour_wfp_a <- function(..., type = "sequential",
                                palette = 1,
                                direction = 1,
@@ -353,10 +351,7 @@ scale_colour_wfp_a <- function(..., type = "sequential",
 #' @param ... Additional arguments passed to `discrete_scale`.
 #'
 #' @return A ggplot2 discrete color scale.
-#' @examples
-#' ggplot(mtcars, aes(x = factor(cyl), fill = factor(cyl))) +
-#'   geom_bar() +
-#'   scale_colour_wfp_b()
+#' @export
 scale_colour_wfp_b <- function(..., type = "qualitative",
                                palette = 1,
                                direction = 1,
@@ -395,10 +390,7 @@ scale_colour_wfp_b <- function(..., type = "qualitative",
 #' @param ... Additional arguments passed to `continuous_scale`.
 #'
 #' @return A ggplot2 continuous fill scale.
-#' @examples
-#' ggplot(mtcars, aes(x = wt, y = mpg, fill = mpg)) +
-#'   geom_tile() +
-#'   scale_fill_wfp_a()
+#' @export
 scale_fill_wfp_a <- function(..., type = "sequential",
                              palette = 1,
                              direction = 1,
@@ -431,10 +423,7 @@ scale_fill_wfp_a <- function(..., type = "sequential",
 #' @param ... Additional arguments passed to `discrete_scale`.
 #'
 #' @return A ggplot2 discrete fill scale.
-#' @examples
-#' ggplot(mtcars, aes(x = factor(cyl), fill = factor(cyl))) +
-#'   geom_bar() +
-#'   scale_fill_wfp_b()
+#' @export
 scale_fill_wfp_b <- function(..., type = "qualitative",
                              palette = 1,
                              direction = 1,
@@ -472,9 +461,7 @@ scale_fill_wfp_b <- function(..., type = "qualitative",
 #' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
 #'
 #' @return A function that generates a palette for ggplot2 scales.
-#' @examples
-#' pal <- wfp_pal_scale(type = "sequential", palette = 1)
-#' pal(5)
+#' @export
 wfp_pal_scale <- function(type = "qualitative",
                           nmax = NULL, order = NULL,
                           palette = 1, direction = 1) {
@@ -528,6 +515,7 @@ wfp_pal_scale <- function(type = "qualitative",
 #' @return A valid palette name.
 #' @examples
 #' wfp_pal_name("invalid_palette", "qualitative")
+#' @export
 wfp_pal_name <- function(palette, type) {
   if (is.character(palette)) {
     if (!palette %in% wfpcolors$name) {
@@ -556,6 +544,7 @@ wfp_pal_name <- function(palette, type) {
 #' @return A vector of colors.
 #' @examples
 #' wfp_pal(5, "blue_sequential")
+#' @export
 wfp_pal <- function(n = NULL, name, ...){
   if (!(name %in% wfpcolors$name)){
     stop(paste(name, "is not a valid palette name\n"),
@@ -608,6 +597,7 @@ wfp_pal <- function(n = NULL, name, ...){
 #' @return A plot displaying the palettes.
 #' @examples
 #' display_wfp_all()
+#' @export
 display_wfp_all <- function(n = NULL, type = "all") {
   wfpcolors <- wfpcolors[nrow(wfpcolors):1, ]
   if (any(type == "all")) {
