@@ -66,7 +66,7 @@ plot(HHSNoFood_admin1_barplot)
 <img src="images/HHSNoFood_admin1_barplot_ugly" width="1500" />
 
 
-Step 4: Tweak the Graph Settings
+### Step 4: Tweak the Graph Settings
 
 Lastly, we applied theme_wfp(), but it still looks cluttered. Let's tweak the settings to remove unnecessary elements. Since the title description already indicates that the y-axis represents percentages and the data labels contain the values, we can remove all y-axis labels, text, and grid lines. For the x-axis, we only need to show the axis text (the names of the states).
 

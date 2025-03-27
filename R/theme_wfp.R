@@ -2,10 +2,33 @@
 ## Creates a function that stores a WFP ggplot theme
 ##########################################################
 
-## resource outlining primary ggplot theme elements
-## https://ggplot2.tidyverse.org/reference/theme.html
-## https://ggplot2.tidyverse.org/reference/element.html
-
+#' theme_wfp
+#'
+#' A custom ggplot2 theme function designed for WFP visualizations.
+#'
+#' @param font_size Numeric. Base font size for the theme. Default is 10.
+#' @param font_family Character. Font family to use. Default is "Open Sans".
+#' @param line_size Numeric. Line size for elements like grid lines and axis lines. Default is 0.5.
+#' @param rel_tiny Numeric. Relative size for tiny text. Default is 6/10.
+#' @param rel_small Numeric. Relative size for small text. Default is 8/10.
+#' @param rel_normal Numeric. Relative size for normal text. Default is 10/10.
+#' @param rel_large Numeric. Relative size for large text. Default is 12/10.
+#' @param rel_xlarge Numeric. Relative size for extra-large text. Default is 14/10.
+#' @param rel_xxlarge Numeric. Relative size for extra-extra-large text. Default is 16/10.
+#' @param grid Logical or Character. Whether to display grid lines. Can also specify "x", "y", "X", or "Y" for specific grid lines. Default is TRUE.
+#' @param axis Logical or Character. Whether to display axis lines. Can also specify "x" or "y" for specific axes. Default is "x".
+#' @param axis_text Logical or Character. Whether to display axis text. Can also specify "x" or "y" for specific axes. Default is TRUE.
+#' @param axis_title Logical or Character. Whether to display axis titles. Can also specify "x" or "y" for specific axes. Default is TRUE.
+#' @param axis_ticks Logical or Character. Whether to display axis ticks. Can also specify "x" or "y" for specific axes. Default is FALSE.
+#' @param legend Logical. Whether to display the legend. Default is TRUE.
+#' @param legend_title Logical. Whether to display the legend title. Default is FALSE.
+#'
+#' @return A ggplot2 theme object customized for WFP visualizations.
+#' @examples
+#' library(ggplot2)
+#' ggplot(mtcars, aes(x = wt, y = mpg)) +
+#'   geom_point() +
+#'   theme_wfp()
 theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
                       rel_tiny = 6 / 10, rel_small = 8 / 10,  rel_normal = 10 / 10, rel_large = 12 / 10, rel_xlarge = 14 / 10, rel_xxlarge = 16 / 10,
                       grid = TRUE, axis = "x", axis_text = TRUE, axis_title = TRUE,
@@ -278,11 +301,25 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
   ret
 }
 
-
 ##########################################################
-## Creates a function the updates the default gemo font family to Open Sans
+## Creates a function that updates the default geom font family to Open Sans
 ##########################################################
 
+#' update_geom_font_defaults
+#'
+#' Updates the default font family, face, size, and color for text and label geoms in ggplot2.
+#'
+#' @param family Character. Font family to use. Default is "Open Sans".
+#' @param face Character. Font face to use (e.g., "plain", "bold"). Default is "plain".
+#' @param size Numeric. Font size to use. Default is 3.5.
+#' @param color Character. Font color to use. Default is "#191919" (dark grey).
+#'
+#' @return Updates the default settings for text and label geoms in ggplot2.
+#' @examples
+#' update_geom_font_defaults(family = "Arial", size = 4)
+#' ggplot(mtcars, aes(x = wt, y = mpg, label = rownames(mtcars))) +
+#'   geom_text() +
+#'   theme_wfp()
 update_geom_font_defaults <- function(family = "Open Sans", face = "plain", size = 3.5,
                                       color = "#191919") {
   ggplot2::update_geom_defaults("text", list(family = family, face = face, size = size, color = color))

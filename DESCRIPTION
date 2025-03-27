@@ -1,11 +1,11 @@
 Package: wfpthemes
 Type: Package
 Title: WFP Templates for Ggplot and Colour Palettes
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: Color palettes and themes for plots based on WFP styling
-License: What license is it under?
+Version: 1.0.0
+Author: Nicole Wu (@nicolefindstar), Bill Olander (@olanderb), William McFall (@willmcfall)
+Maintainer: Alessandra Gherardelli (@alexgherardelli)
+Description: R package to create WFP-themed data visualizations
+License: Affero GLP 3,0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3

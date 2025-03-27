@@ -1,5 +1,5 @@
 #########################################################
-## Creates discrete color palettes for vizualization of categorical values
+## Creates discrete color palettes for visualization of categorical values
 ##########################################################
 
 main_blue <- "#007DBC"
@@ -35,7 +35,6 @@ pal_navy_wfp <- c(
   "navy6" = colorspace::darken(main_navy, 0.50),
   "navy7" = colorspace::darken(main_navy, 0.75)
 )
-
 
 ## creates red color palette object
 red_sequential_wfp <- c(
@@ -75,16 +74,13 @@ pal_orange_wfp <- c(
 
 ipc_palette <- c("#CDFACD","#FAE61E","#E67800","#C80000", "#640000")
 
-
 ## creates color palette object aligned with indicator compendium guidance
 cari_palette <-  c("#FFD7D7","#ff6e6e","#ff0000","#820000")
 
 ## creates color palette object aligned with food security guidance
-# Renamed from pal_stoplight_3pt to food_security_blue_3cat
 food_security_blue_3cat <- c("#B4CFED","#007DBC","#002F5A")  # Update colors as needed
 
 ## creates color palette object aligned with food security guidance
-# Renamed from pal_stoplight_4pt to food_security_blue_4cat
 food_security_blue_4cat <- c("#B4CFED","#73A5D4","#007DBC","#002F5A")  # Update colors as needed
 
 ## creates new red food security palette with 3 points
@@ -96,11 +92,8 @@ food_security_red_4cat <- c("#ECE1B1","#E6B068","#E67536","#E3002B")  # Update c
 ## creates new CARI area palette
 cari_area_palette <- c("#FFFFD4","#EAE297","#D7C55A","#C7A600")  # Update colors as needed
 
-
 ## creates color palette object aligned with WFP corporate guidance
-
 pal_main <- c(main_blue, main_light_blue, main_navy, main_ivory, main_orange, main_red, main_purple, main_light_red, main_tan)
-
 
 
 ## creates object containing palette name, potential palette applications, and min/max number of categories palette can accommodate
@@ -309,12 +302,26 @@ wfpcolors <- tibble::tibble(
 )
 
 
-
-
 ##########################################################
 ## Creates continuous color palettes for vizualization of continuous values
 ##########################################################
 
+#' scale_colour_wfp_a
+#'
+#' Creates a continuous color scale for ggplot2 visualizations.
+#'
+#' @param type Character. Type of palette to use ("sequential", "qualitative", etc.). Default is "sequential".
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#' @param na.value Character. Color for missing values. Default is "#E9E9E9".
+#' @param guide Character. Type of legend guide ("colourbar" or "legend"). Default is "colourbar".
+#' @param ... Additional arguments passed to `continuous_scale`.
+#'
+#' @return A ggplot2 continuous color scale.
+#' @examples
+#' ggplot(mtcars, aes(x = wt, y = mpg, color = mpg)) +
+#'   geom_point() +
+#'   scale_colour_wfp_a()
 scale_colour_wfp_a <- function(..., type = "sequential",
                                palette = 1,
                                direction = 1,
@@ -333,6 +340,23 @@ scale_colour_wfp_a <- function(..., type = "sequential",
 }
 
 
+#' scale_colour_wfp_b
+#'
+#' Creates a discrete color scale for ggplot2 visualizations.
+#'
+#' @param type Character. Type of palette to use ("qualitative", etc.). Default is "qualitative".
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#' @param nmax Numeric. Maximum number of colors in the palette. Default is NULL.
+#' @param order Numeric. Order of colors in the palette. Default is NULL.
+#' @param na.value Character. Color for missing values. Default is "#E9E9E9".
+#' @param ... Additional arguments passed to `discrete_scale`.
+#'
+#' @return A ggplot2 discrete color scale.
+#' @examples
+#' ggplot(mtcars, aes(x = factor(cyl), fill = factor(cyl))) +
+#'   geom_bar() +
+#'   scale_colour_wfp_b()
 scale_colour_wfp_b <- function(..., type = "qualitative",
                                palette = 1,
                                direction = 1,
@@ -359,6 +383,22 @@ scale_colour_wfp_b <- function(..., type = "qualitative",
 ## Creates continuous color palettes for vizualization of continuous values
 ##########################################################
 
+#' scale_fill_wfp_a
+#'
+#' Creates a continuous fill scale for ggplot2 visualizations.
+#'
+#' @param type Character. Type of palette to use ("sequential", etc.). Default is "sequential".
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#' @param na.value Character. Color for missing values. Default is "#E9E9E9".
+#' @param guide Character. Type of legend guide ("colourbar" or "legend"). Default is "colourbar".
+#' @param ... Additional arguments passed to `continuous_scale`.
+#'
+#' @return A ggplot2 continuous fill scale.
+#' @examples
+#' ggplot(mtcars, aes(x = wt, y = mpg, fill = mpg)) +
+#'   geom_tile() +
+#'   scale_fill_wfp_a()
 scale_fill_wfp_a <- function(..., type = "sequential",
                              palette = 1,
                              direction = 1,
@@ -378,6 +418,23 @@ scale_fill_wfp_a <- function(..., type = "sequential",
 }
 
 
+#' scale_fill_wfp_b
+#'
+#' Creates a discrete fill scale for ggplot2 visualizations.
+#'
+#' @param type Character. Type of palette to use ("qualitative", etc.). Default is "qualitative".
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#' @param nmax Numeric. Maximum number of colors in the palette. Default is NULL.
+#' @param order Numeric. Order of colors in the palette. Default is NULL.
+#' @param na.value Character. Color for missing values. Default is "#E9E9E9".
+#' @param ... Additional arguments passed to `discrete_scale`.
+#'
+#' @return A ggplot2 discrete fill scale.
+#' @examples
+#' ggplot(mtcars, aes(x = factor(cyl), fill = factor(cyl))) +
+#'   geom_bar() +
+#'   scale_fill_wfp_b()
 scale_fill_wfp_b <- function(..., type = "qualitative",
                              palette = 1,
                              direction = 1,
@@ -404,6 +461,20 @@ scale_fill_wfp_b <- function(..., type = "qualitative",
 ## Creates a series of functions to validate the palette name and ensure the the palette aligns with data type and number of categories
 ##########################################################
 
+#' wfp_pal_scale
+#'
+#' Creates a palette function for ggplot2 scales.
+#'
+#' @param type Character. Type of palette to use ("qualitative", "sequential", etc.). Default is "qualitative".
+#' @param nmax Numeric. Maximum number of colors in the palette. Default is NULL.
+#' @param order Numeric. Order of colors in the palette. Default is NULL.
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#'
+#' @return A function that generates a palette for ggplot2 scales.
+#' @examples
+#' pal <- wfp_pal_scale(type = "sequential", palette = 1)
+#' pal(5)
 wfp_pal_scale <- function(type = "qualitative",
                           nmax = NULL, order = NULL,
                           palette = 1, direction = 1) {
@@ -447,6 +518,16 @@ wfp_pal_scale <- function(type = "qualitative",
 ## Creates function to validate whether palette name is valid otherwise replaces with blue_sequential
 ##########################################################
 
+#' wfp_pal_name
+#'
+#' Validates the palette name and replaces invalid names with "blue_sequential".
+#'
+#' @param palette Character. Palette name to validate.
+#' @param type Character. Type of palette ("qualitative", "sequential", etc.).
+#'
+#' @return A valid palette name.
+#' @examples
+#' wfp_pal_name("invalid_palette", "qualitative")
 wfp_pal_name <- function(palette, type) {
   if (is.character(palette)) {
     if (!palette %in% wfpcolors$name) {
@@ -464,6 +545,17 @@ wfp_pal_name <- function(palette, type) {
 ## Creates function to validate whether palette has enough categories to allow for vizualization
 ##########################################################
 
+#' wfp_pal
+#'
+#' Validates the number of colors in a palette and generates the palette.
+#'
+#' @param n Numeric. Number of colors to generate. Default is NULL.
+#' @param name Character. Name of the palette.
+#' @param ... Additional arguments passed to `colorRampPalette`.
+#'
+#' @return A vector of colors.
+#' @examples
+#' wfp_pal(5, "blue_sequential")
 wfp_pal <- function(n = NULL, name, ...){
   if (!(name %in% wfpcolors$name)){
     stop(paste(name, "is not a valid palette name\n"),
@@ -506,6 +598,16 @@ wfp_pal <- function(n = NULL, name, ...){
 ## Creates a function that displays the color palettes
 ##########################################################
 
+#' display_wfp_all
+#'
+#' Displays all WFP color palettes.
+#'
+#' @param n Numeric. Number of colors to display for each palette. Default is NULL.
+#' @param type Character. Type of palettes to display ("all", "qualitative", "sequential", "diverging"). Default is "all".
+#'
+#' @return A plot displaying the palettes.
+#' @examples
+#' display_wfp_all()
 display_wfp_all <- function(n = NULL, type = "all") {
   wfpcolors <- wfpcolors[nrow(wfpcolors):1, ]
   if (any(type == "all")) {
