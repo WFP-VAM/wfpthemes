@@ -14,7 +14,7 @@ theme_wfp <- function(font_size = 10, font_family = "Open Sans", line_size = .5,
   ## establishment of margin formatting
   half_line <- font_size / 2
 
-  ## establishment of colour pallete for font and line formatting
+  ## establishment of colour palette for font and line formatting
   wfp_blue <- "#007DBC"
   dark_grey <- "#191919"
   medium_grey <- "#666666"

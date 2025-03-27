@@ -120,13 +120,11 @@ wfpcolors <- tibble::tibble(
     # Added new food security red palettes per roadmap
     "food_security_red_3cat",
     "food_security_red_4cat",
-    # Removed pal_fcsn and pal_lcs as requested
     # Consolidated Approach for Reporting Indicators palettes
     "cari_palette",
     "cari_area_palette", # Added per roadmap
     # Single-color sequential palettes
     "blue_sequential",
-    # Removed per roadmap: "pal_navy", "pal_grey", "pal_orange"
     "red_sequential",
     # Diverging palettes
     "blue_red_divergent",

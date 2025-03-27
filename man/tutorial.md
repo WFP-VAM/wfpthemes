@@ -1,10 +1,12 @@
-## Quick Tutorial on wfpthemes 
+# Getting started with `wfpthemes`
 
-### using/selecting color palettes
+## Selecting color palettes
 
-Lets say that I wanted to create a graph of one of the Household Hunger Strategy questions.
+Let's say you want to create a graph based on one of the Household Hunger Strategy questions.
 
-First, make table of results (in a format easy to put in for graphing)
+### Step 1: Create a Table of Results
+
+First, create a table of results in a format that's easy to use for graphing:
 
 ``` r
 library(tidyverse)
@@ -21,7 +23,11 @@ HHSNoFood_admin1_table_long <- sampledataenglish %>%
 glimpse(HHSNoFood_admin1_table_long)  
 ```
 
-Second, let's take a look at available color palettes .  
+
+
+### Step 2: Display Available Color Palettes
+
+Next, let's take a look at the available color palettes:
 
 ``` r
 display_wfp_all()
@@ -30,7 +36,11 @@ display_wfp_all()
 <img src="images/palettes.png" width="2100" />
 
 
-Since we have two response options and no need for a specific palette (like those for FCS, CARI, etc), we can use the main wfp palette - *wfp_main_8cat* to create our graph.  Lets graph !
+Since we have two response options  let's ise the main  pal_wfp_main, to create our graph.
+
+### Step 3: Create the Graph
+
+Let's create the graph:
 
 ``` r
 HHSNoFood_admin1_barplot <- ggplot(HHSNoFood_admin1_table_long) +geom_bar(
@@ -49,14 +59,18 @@ HHSNoFood_admin1_barplot <- ggplot(HHSNoFood_admin1_table_long) +geom_bar(
 any kind in your house because of lack of resources to get food?'",
     caption = "Source: Emergency Food Security Assessment, data collected April 2024"
   ) + theme_wfp()
-```
-``` r
+
 plot(HHSNoFood_admin1_barplot)
 ```
 
 <img src="images/HHSNoFood_admin1_barplot_ugly" width="1500" />
 
-Lastly, we applied *theme_wfp()* but it still looks ugly so let's tweak the settings in *theme_wfp()* to get rid of the unnecessary clutter. Since we already know from the title description that the y axis is a percentage and the data labels contain the values, we can remove all the y-axis labels/text/grid lines. For the x-axis, all we need is to show the  axis text (the names of the states) - the rest we can keep blank.
+
+Step 4: Tweak the Graph Settings
+
+Lastly, we applied theme_wfp(), but it still looks cluttered. Let's tweak the settings to remove unnecessary elements. Since the title description already indicates that the y-axis represents percentages and the data labels contain the values, we can remove all y-axis labels, text, and grid lines. For the x-axis, we only need to show the axis text (the names of the states).
+
+
 
 ``` r
 HHSNoFood_admin1_barplot <- HHSNoFood_admin1_barplot + theme_wfp(
@@ -64,9 +78,7 @@ HHSNoFood_admin1_barplot <- HHSNoFood_admin1_barplot + theme_wfp(
     axis = FALSE,
     axis_title = FALSE,
     axis_text = "x")
-```
 
-``` r
 plot(HHSNoFood_admin1_barplot)
 ```
 
