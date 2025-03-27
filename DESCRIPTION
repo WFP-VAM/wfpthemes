@@ -5,7 +5,8 @@ Title: WFP Templates for ggplot2 and Colour Palettes
 Authors@R: c(person("Nicole", "Wu", role = "aut",
            email = "nicole.wu@fao.org"),
     person("Bill", "Olander", role = "aut"),
-    person("William", "McFall", role = "ctb"))
+    person("William", "McFall", role = "ctb"),
+    person("Alessandra", "Gherardelli", role = "cre", email = "alessandra.gherardelli@wfp.org"))
 Author: Nicole Wu [aut],
   Bill Olander [aut],
   William McFall [ctb]
