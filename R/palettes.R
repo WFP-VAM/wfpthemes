@@ -1,24 +1,21 @@
 #########################################################
-## Creates discrete color palettes for vizualization of categorical values
+# Creates discrete color palettes for visualization of categorical values
 ##########################################################
 
 main_blue <- "#007DBC"
-main_light_blue <- "#36B5C5"
-main_navy <- "#1A4262"
-main_green <- "#008868"
-main_light_green <- "#00B485"
-main_red <- "#982B56"
-main_light_red <- "#EF404C"
-main_grey <- "#999999"
-main_light_grey <- "#E6E6E6"
-main_orange <- "#F47847"
-main_brown <- "#B79F8D"
+main_light_blue <- "#008EB2"
+main_navy <- "#002F5A"
+main_red <- "#E3002B"
+main_light_red <- "#ECE1B1"
+main_ivory <- "#ECE1B1"
+main_orange <- "#E67536"
+main_purple <- "#810054"
 main_tan <- "#ECDFBB"
 main_black <- "#000000"
 main_white <- "#FFFFFF"
 
 ## creates blue color palette object
-pal_blue_wfp <- c(
+blue_sequential_wfp <- c(
   "blue1" = colorspace::lighten(main_blue, 0.75),
   "blue2" = colorspace::lighten(main_blue, 0.50),
   "blue3" = colorspace::lighten(main_blue, 0.25),
@@ -39,19 +36,8 @@ pal_navy_wfp <- c(
   "navy7" = colorspace::darken(main_navy, 0.75)
 )
 
-## creates green color palette object
-pal_green_wfp <- c(
-  "green1" = colorspace::lighten(main_green, 0.75),
-  "green2" = colorspace::lighten(main_green, 0.50),
-  "green3" = colorspace::lighten(main_green, 0.25),
-  "green4" = main_green,
-  "green5" = colorspace::darken(main_green, 0.25),
-  "green6" = colorspace::darken(main_green, 0.50),
-  "green7" = colorspace::darken(main_green, 0.75)
-)
-
 ## creates red color palette object
-pal_red_wfp <- c(
+red_sequential_wfp <- c(
   "red1" = colorspace::lighten(main_red, 0.75),
   "red2" = colorspace::lighten(main_red, 0.50),
   "red3" = colorspace::lighten(main_red, 0.25),
@@ -63,13 +49,13 @@ pal_red_wfp <- c(
 
 ## creates grey color palette object
 pal_grey_wfp <- c(
-  "grey1" = colorspace::lighten(main_grey, 0.75),
-  "grey2" = colorspace::lighten(main_grey, 0.50),
-  "grey3" = colorspace::lighten(main_grey, 0.25),
-  "grey4" = main_grey,
-  "grey5" = colorspace::darken(main_grey, 0.25),
-  "grey6" = colorspace::darken(main_grey, 0.50),
-  "grey7" = colorspace::darken(main_grey, 0.75)
+  "grey1" = colorspace::lighten(main_ivory, 0.75),
+  "grey2" = colorspace::lighten(main_ivory, 0.50),
+  "grey3" = colorspace::lighten(main_ivory, 0.25),
+  "grey4" = main_ivory,
+  "grey5" = colorspace::darken(main_ivory, 0.25),
+  "grey6" = colorspace::darken(main_ivory, 0.50),
+  "grey7" = colorspace::darken(main_ivory, 0.75)
 )
 
 ## creates orange color palette object
@@ -83,191 +69,257 @@ pal_orange_wfp <- c(
   "orange7" = colorspace::darken(main_orange, 0.75)
 )
 
-
-
-## creates color palette object aligned with WFP corporate guidance
-pal_main <- c(main_blue, main_light_blue, main_navy, main_grey, main_green, main_light_green, main_orange, main_red, main_brown, main_light_red, main_tan)
-
 ## creates color palette object aligned with ipc guidance
 # https://www.ipcinfo.org/fileadmin/user_upload/ipcinfo/docs/IPC_Acute_Food_Insecurity_Mapping_Guidelines.pdf
 
-pal_ipc <- c("#CDFACD","#FAE61E","#E67800","#C80000", "#640000")
-
-## creates color palette object aligned with ipc guidance
-# https://docs.wfp.org/api/documents/WFP-0000134704/download/?_ga=2.91951514.145906710.1681992709-313551633.1680773110
-pal_stoplight_3pt <- c("#92D050","#FFFF00","#FF0000")
-
-## creates color palette object aligned with ipc guidance
-pal_stoplight_4pt <- c("#92D050","#FFFF00","#FFC000","#FF0000")
+ipc_palette <- c("#CDFACD","#FAE61E","#E67800","#C80000", "#640000")
 
 ## creates color palette object aligned with indicator compendium guidance
-pal_fcsn <-  c("#92D050","#E46C0A","#C00000")
+cari_palette <-  c("#FFD7D7","#ff6e6e","#ff0000","#820000")
 
-## creates color palette object aligned with indicator compendium guidance
-pal_lcs <-  c("#F1ECE8","#D5B868","#F37847","#C00000")
+## creates color palette object aligned with food security guidance
+food_security_blue_3cat <- c("#B4CFED","#007DBC","#002F5A")  # Update colors as needed
 
-## creates color palette object aligned with indicator compendium guidance
-pal_cari <-  c("#FFD7D7","#ff6e6e","#ff0000","#820000")
+## creates color palette object aligned with food security guidance
+food_security_blue_4cat <- c("#B4CFED","#73A5D4","#007DBC","#002F5A")  # Update colors as needed
+
+## creates new red food security palette with 3 points
+food_security_red_3cat <- c("#ECE1B1","#E67536","#E3002B")  # Update colors as needed
+
+## creates new red food security palette with 4 points
+food_security_red_4cat <- c("#ECE1B1","#E6B068","#E67536","#E3002B")  # Update colors as needed
+
+## creates new CARI area palette
+cari_area_palette <- c("#FFFFD4","#EAE297","#D7C55A","#C7A600")  # Update colors as needed
+
+## creates color palette object aligned with WFP corporate guidance
+pal_main <- c(main_blue, main_light_blue, main_navy, main_ivory, main_orange, main_red, main_purple, main_light_red, main_tan)
+
 
 ## creates object containing palette name, potential palette applications, and min/max number of categories palette can accommodate
-wfpcolors <- tibble::tibble(name = c("pal_wfp_main",
-                                     "pal_ipc",
-                                     "pal_stoplight_3pt",
-                                     "pal_stoplight_4pt",
-                                     "pal_fcsn",
-                                     "pal_lcs",
-                                     "pal_cari",
-                                     "pal_blue",
-                                     "pal_navy",
-                                     "pal_green",
-                                     "pal_red",
-                                     "pal_orange",
-                                     "pal_grey",
-                                     "pal_blue_red",
-                                     "pal_navy_red"),
-                            type = c(rep("qualitative", 7),
-                                     rep("sequential", 6),
-                                     rep("diverging", 2)),
-                            min_n = 1,
-                            max_n = c(c(10, 5, 3, 4, 3, 4,4),
-                                      rep(7, 6),
-                                      rep(9, 2)),
-                            n1 = list(pal_main[1],
-                                      pal_ipc[1],
-                                      pal_stoplight_3pt[1],
-                                      pal_stoplight_4pt[1],
-                                      pal_fcsn[1],
-                                      pal_lcs[1],
-                                      pal_cari[1],
-                                      pal_blue_wfp[4],
-                                      pal_navy_wfp[5],
-                                      pal_green_wfp[4],
-                                      pal_red_wfp[4],
-                                      pal_orange_wfp[3],
-                                      pal_grey_wfp[4],
-                                      NULL, NULL),
-                            n2 = list(pal_main[1:2],
-                                      pal_ipc[1:2],
-                                      pal_stoplight_3pt[1:2],
-                                      pal_stoplight_4pt[1:2],
-                                      pal_fcsn[1:2],
-                                      pal_lcs[1:2],
-                                      pal_cari[1:2],
-                                      c(pal_blue_wfp[2], pal_blue_wfp[6]),
-                                      c(pal_navy_wfp[2], pal_navy_wfp[6]),
-                                      c(pal_green_wfp[2], pal_green_wfp[6]),
-                                      c(pal_red_wfp[2], pal_red_wfp[6]),
-                                      c(pal_orange_wfp[2], pal_orange_wfp[6]),
-                                      c(pal_grey_wfp[2], pal_grey_wfp[6]),
-                                      c(pal_blue_wfp[2], pal_red_wfp[6]),
-                                      c(pal_navy_wfp[2], pal_red_wfp[6])),
-                            n3 = list(pal_main[1:3],
-                                      pal_ipc[1:3],
-                                      pal_stoplight_3pt[1:3],
-                                      pal_stoplight_4pt[1:3],
-                                      pal_fcsn[1:3],
-                                      pal_lcs[1:3],
-                                      pal_cari[1:3],
-                                      pal_blue_wfp[3:5],
-                                      pal_navy_wfp[3:5],
-                                      pal_green_wfp[3:5],
-                                      pal_red_wfp[3:5],
-                                      pal_orange_wfp[3:5],
-                                      pal_grey_wfp[3:5],
-                                      c(pal_blue_wfp[4], pal_grey_wfp[1], pal_red_wfp[4]),
-                                      c(pal_navy_wfp[4], pal_grey_wfp[1], pal_red_wfp[4])),
-                            n4 = list(pal_main[1:4],
-                                      pal_ipc[1:4],
-                                      NULL,
-                                      pal_stoplight_4pt[1:4],
-                                      NULL,
-                                      pal_lcs[1:4],
-                                      pal_cari[1:4],
-                                      pal_blue_wfp[2:5],
-                                      pal_navy_wfp[2:5],
-                                      pal_green_wfp[2:5],
-                                      pal_red_wfp[2:5],
-                                      pal_orange_wfp[2:5],
-                                      pal_grey_wfp[2:5],
-                                      c(pal_blue_wfp[4], pal_blue_wfp[2],
-                                        pal_red_wfp[2], pal_red_wfp[4]),
-                                      c(pal_navy_wfp[5], pal_navy_wfp[3],
-                                        pal_red_wfp[2], pal_red_wfp[4])),
-                            n5 = list(pal_main[1:5],
-                                      pal_ipc[1:5],
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      pal_blue_wfp[2:6],
-                                      pal_navy_wfp[2:6],
-                                      pal_green_wfp[2:6],
-                                      pal_red_wfp[2:6],
-                                      pal_orange_wfp[2:6],
-                                      pal_grey_wfp[2:6],
-                                      c(pal_blue_wfp[5], pal_blue_wfp[2],
-                                        pal_grey_wfp[1],
-                                        pal_red_wfp[2], pal_red_wfp[5]),
-                                      c(pal_navy_wfp[5], pal_navy_wfp[3],
-                                        pal_grey_wfp[1],
-                                        pal_red_wfp[3], pal_red_wfp[5])),
-                            n6 = list(pal_main[1:6],
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      pal_blue_wfp[1:6],
-                                      pal_navy_wfp[1:6],
-                                      pal_green_wfp[1:6],
-                                      pal_red_wfp[1:6],
-                                      pal_orange_wfp[1:6],
-                                      pal_grey_wfp[1:6],
-                                      c(pal_blue_wfp[4:2],  pal_red_wfp[2:4]),
-                                      c(pal_navy_wfp[5:3], pal_red_wfp[2:4])),
-                            n7 = list(pal_main[1:7],
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      pal_blue_wfp[1:7],
-                                      pal_navy_wfp[1:7],
-                                      pal_green_wfp[1:7],
-                                      pal_red_wfp[1:7],
-                                      pal_orange_wfp[1:7],
-                                      pal_grey_wfp[1:7],
-                                      c(pal_blue_wfp[4:2],  pal_grey_wfp[1], pal_red_wfp[2:4]),
-                                      c(pal_navy_wfp[5:3], pal_grey_wfp[1], pal_red_wfp[2:4])),
-                            n8 = list(pal_main[1:8],
-                                      NULL,NULL, NULL,
-                                      NULL, NULL, NULL,
-                                      NULL, NULL, NULL, NULL, NULL, NULL,
-                                      c(pal_blue_wfp[5:2], pal_red_wfp[2:5]),
-                                      c(pal_navy_wfp[5:2], pal_red_wfp[2:5])),
-                            n9 = list(pal_main[1:9],
-                                      NULL, NULL, NULL,
-                                      NULL, NULL, NULL,
-                                      NULL, NULL, NULL, NULL, NULL, NULL,
-                                      c(pal_blue_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5]),
-                                      c(pal_navy_wfp[5:2], pal_grey_wfp[1], pal_red_wfp[2:5])),
-                            n10 = list(pal_main,
-                                       NULL, NULL, NULL, NULL, NULL, NULL,
-                                       NULL, NULL, NULL,
-                                       NULL, NULL, NULL,
-                                       NULL, NULL))
 
+# Define the main color palette information table
+# This table maps palette names to their properties and color values for different sizes
+wfpcolors <- tibble::tibble(
+  # Palette names - includes standard WFP palettes and specialized indicator palettes
+  name = c(
+    # Main WFP corporate palette
+    "wfp_main_8cat",
+    # Food security classification palettes
+    "ipc_palette",
+    # Renamed from stoplight to foodsec per roadmap
+    "food_security_blue_3cat", 
+    "food_security_blue_4cat",
+    # Added new food security red palettes per roadmap
+    "food_security_red_3cat",
+    "food_security_red_4cat",
+    # Consolidated Approach for Reporting Indicators palettes
+    "cari_palette",
+    "cari_area_palette", # Added per roadmap
+    # Single-color sequential palettes
+    "blue_sequential",
+    "red_sequential",
+    # Diverging palettes
+    "blue_red_divergent",
+    "dark_blue_red_divergent"
+  ),
+  
+  # Palette types: qualitative (categorical), sequential (continuous), or diverging
+  type = c(
+    rep("qualitative", 8), # First 8 palettes are qualitative (removed 2)
+    rep("sequential", 2),  # Next 2 are sequential
+    rep("diverging", 2)    # Last 2 are diverging
+  ),
+  
+  # Minimum number of colors for each palette
+  min_n = rep(1, 12),      # Reduced from 14 to 12
+  
+  # Maximum number of colors for each palette
+  max_n = c(
+    7, 5, 3, 4, 3, 4, 4, 4,  # Max colors for qualitative palettes (removed 2)
+    rep(7, 2),               # Max colors for sequential palettes
+    rep(9, 2)                # Max colors for diverging palettes
+  ),
+  
+  # Single color palettes (n=1)
+  n1 = list(
+    pal_main[1],           # Main WFP blue
+    ipc_palette[1],            # IPC minimal/none
+    food_security_blue_3cat[1], # First color
+    food_security_blue_4cat[1], # First color
+    food_security_red_3cat[1],  # First color
+    food_security_red_4cat[1],  # First color
+    # Removed pal_fcsn and pal_lcs
+    cari_palette[1],           # CARI
+    cari_area_palette[1],      # CARI area
+    blue_sequential_wfp[4],       # Medium blue
+    red_sequential_wfp[4],        # Medium red
+    NULL, NULL             # Diverging palettes need at least 2 colors
+  ),
+  
+  # Two-color palettes (n=2)
+  n2 = list(
+    pal_main[1:2],                         # Main blue, light blue
+    ipc_palette[1:2],                          # IPC 1-2
+    food_security_blue_3cat[1:2],             # First 2 colors
+    food_security_blue_4cat[1:2],             # First 2 colors
+    food_security_red_3cat[1:2],              # First 2 colors
+    food_security_red_4cat[1:2],              # First 2 colors
+    # Removed pal_fcsn and pal_lcs
+    cari_palette[1:2],                         # CARI
+    cari_area_palette[1:2],                    # CARI area
+    c(blue_sequential_wfp[2], blue_sequential_wfp[6]),   # Light and dark blue
+    c(red_sequential_wfp[2], red_sequential_wfp[6]),     # Light and dark red
+    c(blue_sequential_wfp[2], red_sequential_wfp[6]),    # Light blue to dark red
+    c(pal_navy_wfp[2], red_sequential_wfp[6])     # Light navy to dark red
+  ),
+  
+  # Three-color palettes (n=3)
+  n3 = list(
+    pal_main[1:3],                         # Main blue, light blue, navy
+    ipc_palette[1:3],                          # IPC 1-3
+    food_security_blue_3cat,                  # Full 3-color palette
+    food_security_blue_4cat[1:3],             # First 3 colors
+    food_security_red_3cat,                   # Full 3-color palette
+    food_security_red_4cat[1:3],              # First 3 colors
+    # Removed pal_fcsn and pal_lcs
+    cari_palette[1:3],                         # CARI
+    cari_area_palette[1:3],                    # CARI area
+    blue_sequential_wfp[3:5],                     # Medium-light to medium-dark blue
+    red_sequential_wfp[3:5],                      # Medium-light to medium-dark red
+    c(blue_sequential_wfp[4], pal_grey_wfp[1], red_sequential_wfp[4]), # Blue-neutral-red
+    c(pal_navy_wfp[4], pal_grey_wfp[1], red_sequential_wfp[4])  # Navy-neutral-red
+  ),
+  
+  # Four-color palettes (n=4)
+  n4 = list(
+    pal_main[1:4],                         # Main blue, light blue, navy, grey
+    ipc_palette[1:4],                          # IPC 1-4
+    NULL,                                  # foodsec_blue_3pt doesn't have 4 colors
+    food_security_blue_4cat,                  # Full 4-color palette
+    NULL,                                  # foodsec_red_3pt doesn't have 4 colors
+    food_security_red_4cat,                   # Full 4-color palette
+    # Removed pal_fcsn and pal_lcs
+    cari_palette,                              # Full 4-color palette
+    cari_area_palette,                         # Full 4-color palette
+    blue_sequential_wfp[2:5],                     # Light to dark blue range
+    red_sequential_wfp[2:5],                      # Light to dark red range
+    c(blue_sequential_wfp[4], blue_sequential_wfp[2], red_sequential_wfp[2], red_sequential_wfp[4]), # Blue to red
+    c(pal_navy_wfp[5], pal_navy_wfp[3], red_sequential_wfp[2], red_sequential_wfp[4])  # Navy to red
+  ),
 
-wfpcolors <- as.data.frame(wfpcolors)
+  # Five-color palettes (n=5)
+  n5 = list(
+    pal_main[1:5],                         # First 5 colors of main palette
+    ipc_palette[1:5],                          # IPC 1-5 (full IPC scale)
+    NULL,                                  # foodsec_blue_3pt doesn't have 5 colors
+    NULL,                                  # foodsec_blue_4pt doesn't have 5 colors
+    NULL,                                  # foodsec_red_3pt doesn't have 5 colors
+    NULL,                                  # foodsec_red_4pt doesn't have 5 colors
+    # Removed pal_fcsn and pal_lcs
+    NULL,                                  # CARI doesn't have 5 colors
+    NULL,                                  # CARI area doesn't have 5 colors
+    blue_sequential_wfp[2:6],                     # Light to very dark blue range
+    red_sequential_wfp[2:6],                      # Light to very dark red range
+    # 5-color diverging blue-grey-red
+    c(blue_sequential_wfp[5], blue_sequential_wfp[2], pal_grey_wfp[1], red_sequential_wfp[2], red_sequential_wfp[5]),
+    # 5-color diverging navy-grey-red
+    c(pal_navy_wfp[5], pal_navy_wfp[3], pal_grey_wfp[1], red_sequential_wfp[3], red_sequential_wfp[5])
+  ),
+  
+  # Six-color palettes (n=6)
+  n6 = list(
+    pal_main[1:6],                         # First 6 colors of main palette
+    NULL,                                  # IPC doesn't have 6 colors
+    NULL,                                  # foodsec_blue_3pt doesn't have 6 colors
+    NULL,                                  # foodsec_blue_4pt doesn't have 6 colors
+    NULL,                                  # foodsec_red_3pt doesn't have 6 colors
+    NULL,                                  # foodsec_red_4pt doesn't have 6 colors
+    # Removed pal_fcsn and pal_lcs
+    NULL,                                  # CARI doesn't have 6 colors
+    NULL,                                  # CARI area doesn't have 6 colors
+    blue_sequential_wfp[1:6],                     # Very light to very dark blue range
+    red_sequential_wfp[1:6],                      # Very light to very dark red range
+    c(blue_sequential_wfp[4:2], red_sequential_wfp[2:4]), # 6-color diverging blue-red
+    c(pal_navy_wfp[5:3], red_sequential_wfp[2:4])  # 6-color diverging navy-red
+  ),
+  
+  # Seven-color palettes (n=7)
+  n7 = list(
+    pal_main[1:7],                         # First 7 colors of main palette (now max)
+    NULL,                                  # IPC doesn't have 7 colors
+    NULL,                                  # foodsec_blue_3pt doesn't have 7 colors
+    NULL,                                  # foodsec_blue_4pt doesn't have 7 colors
+    NULL,                                  # foodsec_red_3pt doesn't have 7 colors
+    NULL,                                  # foodsec_red_4pt doesn't have 7 colors
+    # Removed pal_fcsn and pal_lcs
+    NULL,                                  # CARI doesn't have 7 colors
+    NULL,                                  # CARI area doesn't have 7 colors
+    blue_sequential_wfp[1:7],                     # Full blue range (very light to very dark)
+    red_sequential_wfp[1:7],                      # Full red range
+    # 7-color diverging blue-grey-red
+    c(blue_sequential_wfp[4:2], pal_grey_wfp[1], red_sequential_wfp[2:4]),
+    # 7-color diverging navy-grey-red
+    c(pal_navy_wfp[5:3], pal_grey_wfp[1], red_sequential_wfp[2:4])
+  ),
+  
+  # Eight-color palettes (n=8)
+  n8 = list(
+    NULL,                                  # Main palette reduced to 7 colors
+    NULL, NULL, NULL,                      # IPC, foodsec_blue_3pt, foodsec_blue_4pt don't have 8 colors
+    NULL, NULL,                            # foodsec_red_3pt, foodsec_red_4pt don't have 8 colors
+    # Removed pal_fcsn and pal_lcs
+    NULL, NULL,                            # CARI, CARI area don't have 8 colors
+    NULL, NULL,                            # Sequential palettes don't have 8 colors
+    c(blue_sequential_wfp[5:2], red_sequential_wfp[2:5]), # 8-color diverging blue-red
+    c(pal_navy_wfp[5:2], red_sequential_wfp[2:5])  # 8-color diverging navy-red
+  ),
+  
+  # Nine-color palettes (n=9)
+  n9 = list(
+    NULL,                                  # Main palette reduced to 7 colors
+    NULL, NULL, NULL,                      # IPC, foodsec_blue_3pt, foodsec_blue_4pt don't have 9 colors
+    NULL, NULL,                            # foodsec_red_3pt, foodsec_red_4pt don't have 9 colors
+    # Removed pal_fcsn and pal_lcs
+    NULL, NULL,                            # CARI, CARI area don't have 9 colors
+    NULL, NULL,                            # Sequential palettes don't have 9 colors
+    # 9-color diverging blue-grey-red
+    c(blue_sequential_wfp[5:2], pal_grey_wfp[1], red_sequential_wfp[2:5]),
+    # 9-color diverging navy-grey-red
+    c(pal_navy_wfp[5:2], pal_grey_wfp[1], red_sequential_wfp[2:5])
+  ),
+  
+  # Ten-color palettes (n=10)
+  n10 = list(
+    NULL,                                  # Main palette reduced to 7 colors
+    NULL, NULL, NULL,                      # IPC, foodsec_blue_3pt, foodsec_blue_4pt don't have 10 colors
+    NULL, NULL,                            # foodsec_red_3pt, foodsec_red_4pt don't have 10 colors
+    # Removed pal_fcsn and pal_lcs
+    NULL, NULL,                            # CARI, CARI area don't have 10 colors
+    NULL, NULL,                            # Sequential palettes don't have 10 colors
+    NULL, NULL                             # Diverging palettes don't have 10 colors
+  )
+)
 
 
 ##########################################################
 ## Creates continuous color palettes for vizualization of continuous values
 ##########################################################
 
+
+#' scale_colour_wfp_a
+#'
+#' Creates a continuous color scale for ggplot2 visualizations using WFP color palettes.
+#'
+#' @param ... Additional arguments passed to `continuous_scale`.
+#' @param type Character. Type of palette to use ("sequential", "qualitative", etc.). Default is "sequential".
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#' @param na.value Character. Color for missing values. Default is "#E9E9E9".
+#' @param guide Character. Type of legend guide ("colourbar" or "legend"). Default is "colourbar".
+#'
+#' @return A ggplot2 continuous color scale.
+#' @export
 scale_colour_wfp_a <- function(..., type = "sequential",
                                palette = 1,
                                direction = 1,
@@ -286,6 +338,20 @@ scale_colour_wfp_a <- function(..., type = "sequential",
 }
 
 
+#' scale_colour_wfp_b
+#'
+#' Creates a discrete color scale for ggplot2 visualizations.
+#'
+#' @param type Character. Type of palette to use ("qualitative", etc.). Default is "qualitative".
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#' @param nmax Numeric. Maximum number of colors in the palette. Default is NULL.
+#' @param order Numeric. Order of colors in the palette. Default is NULL.
+#' @param na.value Character. Color for missing values. Default is "#E9E9E9".
+#' @param ... Additional arguments passed to `discrete_scale`.
+#'
+#' @return A ggplot2 discrete color scale.
+#' @export
 scale_colour_wfp_b <- function(..., type = "qualitative",
                                palette = 1,
                                direction = 1,
@@ -312,6 +378,19 @@ scale_colour_wfp_b <- function(..., type = "qualitative",
 ## Creates continuous color palettes for vizualization of continuous values
 ##########################################################
 
+#' scale_fill_wfp_a
+#'
+#' Creates a continuous fill scale for ggplot2 visualizations.
+#'
+#' @param type Character. Type of palette to use ("sequential", etc.). Default is "sequential".
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#' @param na.value Character. Color for missing values. Default is "#E9E9E9".
+#' @param guide Character. Type of legend guide ("colourbar" or "legend"). Default is "colourbar".
+#' @param ... Additional arguments passed to `continuous_scale`.
+#'
+#' @return A ggplot2 continuous fill scale.
+#' @export
 scale_fill_wfp_a <- function(..., type = "sequential",
                              palette = 1,
                              direction = 1,
@@ -331,6 +410,20 @@ scale_fill_wfp_a <- function(..., type = "sequential",
 }
 
 
+#' scale_fill_wfp_b
+#'
+#' Creates a discrete fill scale for ggplot2 visualizations.
+#'
+#' @param type Character. Type of palette to use ("qualitative", etc.). Default is "qualitative".
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#' @param nmax Numeric. Maximum number of colors in the palette. Default is NULL.
+#' @param order Numeric. Order of colors in the palette. Default is NULL.
+#' @param na.value Character. Color for missing values. Default is "#E9E9E9".
+#' @param ... Additional arguments passed to `discrete_scale`.
+#'
+#' @return A ggplot2 discrete fill scale.
+#' @export
 scale_fill_wfp_b <- function(..., type = "qualitative",
                              palette = 1,
                              direction = 1,
@@ -357,6 +450,18 @@ scale_fill_wfp_b <- function(..., type = "qualitative",
 ## Creates a series of functions to validate the palette name and ensure the the palette aligns with data type and number of categories
 ##########################################################
 
+#' wfp_pal_scale
+#'
+#' Creates a palette function for ggplot2 scales.
+#'
+#' @param type Character. Type of palette to use ("qualitative", "sequential", etc.). Default is "qualitative".
+#' @param nmax Numeric. Maximum number of colors in the palette. Default is NULL.
+#' @param order Numeric. Order of colors in the palette. Default is NULL.
+#' @param palette Numeric or Character. Palette index or name. Default is 1.
+#' @param direction Numeric. Direction of the palette (1 for normal, -1 for reversed). Default is 1.
+#'
+#' @return A function that generates a palette for ggplot2 scales.
+#' @export
 wfp_pal_scale <- function(type = "qualitative",
                           nmax = NULL, order = NULL,
                           palette = 1, direction = 1) {
@@ -397,14 +502,25 @@ wfp_pal_scale <- function(type = "qualitative",
 
 
 ##########################################################
-## Creates function to validate whether palette name is valid otherwise replaces with pal_blue
+## Creates function to validate whether palette name is valid otherwise replaces with blue_sequential
 ##########################################################
 
+#' wfp_pal_name
+#'
+#' Validates the palette name and replaces invalid names with "blue_sequential".
+#'
+#' @param palette Character. Palette name to validate.
+#' @param type Character. Type of palette ("qualitative", "sequential", etc.).
+#'
+#' @return A valid palette name.
+#' @examples
+#' wfp_pal_name("invalid_palette", "qualitative")
+#' @export
 wfp_pal_name <- function(palette, type) {
   if (is.character(palette)) {
     if (!palette %in% wfpcolors$name) {
       warning("Unknown palette ", palette)
-      palette = "pal_blue"
+      palette = "blue_sequential"
     }
     return(palette)
   }
@@ -417,6 +533,18 @@ wfp_pal_name <- function(palette, type) {
 ## Creates function to validate whether palette has enough categories to allow for vizualization
 ##########################################################
 
+#' wfp_pal
+#'
+#' Validates the number of colors in a palette and generates the palette.
+#'
+#' @param n Numeric. Number of colors to generate. Default is NULL.
+#' @param name Character. Name of the palette.
+#' @param ... Additional arguments passed to `colorRampPalette`.
+#'
+#' @return A vector of colors.
+#' @examples
+#' wfp_pal(5, "blue_sequential")
+#' @export
 wfp_pal <- function(n = NULL, name, ...){
   if (!(name %in% wfpcolors$name)){
     stop(paste(name, "is not a valid palette name\n"),
@@ -459,6 +587,17 @@ wfp_pal <- function(n = NULL, name, ...){
 ## Creates a function that displays the color palettes
 ##########################################################
 
+#' display_wfp_all
+#'
+#' Displays all WFP color palettes.
+#'
+#' @param n Numeric. Number of colors to display for each palette. Default is NULL.
+#' @param type Character. Type of palettes to display ("all", "qualitative", "sequential", "diverging"). Default is "all".
+#'
+#' @return A plot displaying the palettes.
+#' @examples
+#' display_wfp_all()
+#' @export
 display_wfp_all <- function(n = NULL, type = "all") {
   wfpcolors <- wfpcolors[nrow(wfpcolors):1, ]
   if (any(type == "all")) {
