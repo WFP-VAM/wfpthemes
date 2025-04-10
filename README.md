@@ -188,3 +188,5 @@ All code and content in this repository is licensed under the GNU Affero General
 
 ## Contributing
 We welcome contributions from the open source community! If you're interested in collaborating, please review our [WFP-VAM contribution page](https://github.com/WFP-VAM/.github/blob/main/profile/CONTRIBUTING.md).
+
+Special thanks to Nicole Wu (@nicolefindstar), William Olander (@olanderb) and William McFall for starting this project.
