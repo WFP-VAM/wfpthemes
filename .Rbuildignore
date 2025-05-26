@@ -1,3 +1,8 @@
 ^LICENSE.md$
 ^ROADMAP.md$
 ^tutorial.md$
+^\\.git$
+^\\.Rhistory$
+^\\.gitignore$
+^\\.git$
+^\\.\\.Rcheck$
