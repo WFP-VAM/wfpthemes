@@ -2,16 +2,92 @@
 # Creates discrete color palettes for visualization of categorical values
 ##########################################################
 
+#' Main Blue Color
+#'
+#' A hex code representing the main blue color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_blue <- "#007DBC"
+
+#' Main light blue color
+#'
+#' A hex code representing the light blue color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_light_blue <- "#008EB2"
+
+#' Main navy blue color
+#'
+#' A hex code representing the navy blue color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_navy <- "#002F5A"
+
+#' Main red color
+#'
+#' A hex code representing the red color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_red <- "#E3002B"
+
+#' Main light red color
+#'
+#' A hex code representing the light red color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_light_red <- "#ECE1B1"
+
+#' Main ivory color
+#'
+#' A hex code representing the ivory color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_ivory <- "#ECE1B1"
+
+#' Main orange color
+#'
+#' A hex code representing the orange color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_orange <- "#E67536"
+
+#' Main orange color
+#'
+#' A hex code representing the orange color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_purple <- "#810054"
+
+#' Main tan color
+#'
+#' A hex code representing the tan color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_tan <- "#ECDFBB"
+
+#' Main black color
+#'
+#' A hex code representing the black color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_black <- "#000000"
+
+#' Main white color
+#'
+#' A hex code representing the white color used in the package.
+#'
+#' @format A character string of length 1.
+#' @export
 main_white <- "#FFFFFF"
 
 ## creates blue color palette object
