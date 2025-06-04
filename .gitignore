@@ -56,4 +56,5 @@ rsconnect/
 # R package: bookdown caching files
 /*_files/
 
+*.Rproj
 # End of https://www.toptal.com/developers/gitignore/api/r

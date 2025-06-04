@@ -1,5 +1,5 @@
 Package: wfpthemes
-Version: 1.0.0
+Version: 1.1.0
 Date: 2015-01-01
 Title: WFP Templates for ggplot2 and Colour Palettes
 Authors@R: c(person("Nicole", "Wu", role = "aut",
@@ -7,12 +7,8 @@ Authors@R: c(person("Nicole", "Wu", role = "aut",
     person("Bill", "Olander", role = "aut"),
     person("William", "McFall", role = "ctb"),
     person("Alessandra", "Gherardelli", role = "cre", email = "alessandra.gherardelli@wfp.org"))
-Author: Nicole Wu [aut],
-  Bill Olander [aut],
-  William McFall [ctb]
-Maintainer: Alessandra Gherardelli <Alessandra.Gherardelli@wfp.org>
-Description: A (one paragraph) description of what
-  the package does and why it may be useful.
+Maintainer: Alessandra Gherardelli <alessandra.gherardelli@wfp.org>
+Description: The wfpthemes package provides a ggplot2 theme and a set of colour palettes for making graphics based on WFP Data Visualization Guidelines
 URL: https://www.wfp.org
 License: AGPL-3
 Encoding: UTF-8

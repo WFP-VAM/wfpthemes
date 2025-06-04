@@ -181,7 +181,7 @@ rcsi_barplot
 
 ## Getting help
 
-If you run into issues or bugs, report them on the [GitHub Issues]((https://github.com/WFP-VAM/wfpthemes/issues)) page. Including a minimal reproducible example will make it easier to troubleshoot.
+If you run into issues or bugs, report them on the [GitHub Issues](https://github.com/WFP-VAM/wfpthemes/issues) page. Including a minimal reproducible example will make it easier to troubleshoot.
 
 ## License
 All code and content in this repository is licensed under the GNU Affero General Public License v3.0 license.
