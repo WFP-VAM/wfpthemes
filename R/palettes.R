@@ -90,7 +90,12 @@ main_black <- "#000000"
 #' @export
 main_white <- "#FFFFFF"
 
-## creates blue color palette object
+#' Blue sequential palette 
+#'
+#' A sequential color palette based on the main blue color.
+#'
+#' @format a named vector of hex codes representing the blue sequential palette.
+#' @export
 blue_sequential_wfp <- c(
   "blue1" = colorspace::lighten(main_blue, 0.75),
   "blue2" = colorspace::lighten(main_blue, 0.50),
@@ -101,7 +106,12 @@ blue_sequential_wfp <- c(
   "blue7" = colorspace::darken(main_blue, 0.75)
 )
 
-## creates navy color palette object
+#' Navy sequential palette
+#'
+#' A sequential color palette based on the navy color.
+#'
+#' @format a named vector of hex codes representing the navy sequential palette.
+#' @export
 pal_navy_wfp <- c(
   "navy1" = colorspace::lighten(main_navy, 0.75),
   "navy2" = colorspace::lighten(main_navy, 0.50),
@@ -112,7 +122,12 @@ pal_navy_wfp <- c(
   "navy7" = colorspace::darken(main_navy, 0.75)
 )
 
-## creates red color palette object
+#' Red sequential palette
+#'
+#' A sequential color palette based on the red color.
+#'
+#' @format a named vector of hex codes representing the red sequential palette.
+#' @export
 red_sequential_wfp <- c(
   "red1" = colorspace::lighten(main_red, 0.75),
   "red2" = colorspace::lighten(main_red, 0.50),
@@ -123,7 +138,12 @@ red_sequential_wfp <- c(
   "red7" = colorspace::darken(main_red, 0.75)
 )
 
-## creates grey color palette object
+#' Grey sequential palette
+#'
+#' A sequential monocolor palette
+#'
+#' @format a named vector of hex codes representing a monocolor sequential palette.
+#' @export
 pal_grey_wfp <- c(
   "grey1" = colorspace::lighten(main_ivory, 0.75),
   "grey2" = colorspace::lighten(main_ivory, 0.50),
@@ -134,7 +154,12 @@ pal_grey_wfp <- c(
   "grey7" = colorspace::darken(main_ivory, 0.75)
 )
 
-## creates orange color palette object
+#' Orange sequential palette
+#'
+#' A sequential orange palette
+#'
+#' @format a named vector of hex codes representing a Orange sequential palette.
+#' @export
 pal_orange_wfp <- c(
   "orange1" = colorspace::lighten(main_orange, 0.75),
   "orange2" = colorspace::lighten(main_orange, 0.50),
@@ -148,27 +173,74 @@ pal_orange_wfp <- c(
 ## creates color palette object aligned with ipc guidance
 # https://www.ipcinfo.org/fileadmin/user_upload/ipcinfo/docs/IPC_Acute_Food_Insecurity_Mapping_Guidelines.pdf
 
+#' IPC sequential palette
+#'
+#' IPC palette
+#'
+#' @format a named vector of hex codes representing the IPC palette.
+#' @export
 ipc_palette <- c("#CDFACD","#FAE61E","#E67800","#C80000", "#640000")
 
-## creates color palette object aligned with indicator compendium guidance
+#' CARI sequential palette
+#'
+#' CARI palette
+#'
+#' @format a named vector of hex codes representing the CARI palette.
+#' @export
 cari_palette <-  c("#FFD7D7","#ff6e6e","#ff0000","#820000")
 
 ## creates color palette object aligned with food security guidance
+#' Food security categorical blue palette (3 categories)
+#'
+#' Blue categorical palette for food security classification with 3 categories.
+#'
+#' @format a named vector of hex codes representing the food security blue palette.
+#' @export
 food_security_blue_3cat <- c("#B4CFED","#007DBC","#002F5A")  # Update colors as needed
 
 ## creates color palette object aligned with food security guidance
+#' Food security categorical blue palette (4 categories)
+#'
+#' Blue categorical palette for food security classification with 4 categories.
+#'
+#' @format a named vector of hex codes representing the food security blue palette.
+#' @export
 food_security_blue_4cat <- c("#B4CFED","#73A5D4","#007DBC","#002F5A")  # Update colors as needed
 
 ## creates new red food security palette with 3 points
+#' Food security categorical red palette (3 categories)
+#'
+#' Blue categorical palette for food security classification with 3 categories.
+#'
+#' @format a named vector of hex codes representing the food security red palette.
+#' @export
 food_security_red_3cat <- c("#ECE1B1","#E67536","#E3002B")  # Update colors as needed
 
 ## creates new red food security palette with 4 points
+#' Food security categorical red palette (4 categories)
+#'
+#' Red categorical palette for food security classification with 4 categories.
+#'
+#' @format a named vector of hex codes representing the food security red palette.
+#' @export
 food_security_red_4cat <- c("#ECE1B1","#E6B068","#E67536","#E3002B")  # Update colors as needed
 
 ## creates new CARI area palette
+#' CARI Area categorical palette
+#'
+#' Palette for CARI area classification with 4 categories.
+#'
+#' @format a named vector of hex codes representing the CARI area palette.
+#' @export
 cari_area_palette <- c("#FFFFD4","#EAE297","#D7C55A","#C7A600")  # Update colors as needed
 
 ## creates color palette object aligned with WFP corporate guidance
+#' Main WFP VAM & Monitoring Palette for Food Security Indicators
+#'
+#' A palette containing the main WFP VAM & Monitoring colors
+#'
+#' @format a named vector of hex codes representing the main WFP VAM & Monitoring palette.
+#' @export
 pal_main <- c(main_blue, main_light_blue, main_navy, main_ivory, main_orange, main_red, main_purple, main_light_red, main_tan)
 
 

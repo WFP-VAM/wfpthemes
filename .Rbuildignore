@@ -6,3 +6,5 @@
 ^\\.gitignore$
 ^\\.git$
 ^\\.\\.Rcheck$
+^.*\.Rproj$
+^\.Rproj\.user$
