@@ -7,13 +7,8 @@ Authors@R: c(person("Nicole", "Wu", role = "aut",
     person("Bill", "Olander", role = "aut"),
     person("William", "McFall", role = "ctb"),
     person("Alessandra", "Gherardelli", role = "cre", email = "alessandra.gherardelli@wfp.org"))
-Author: Nicole Wu [aut],
-  Bill Olander [aut],
-  William McFall [ctb]
-  Alessandra Gherardelli [ctb]
 Maintainer: Alessandra Gherardelli <alessandra.gherardelli@wfp.org>
-Description: A (one paragraph) description of what
-  the package does and why it may be useful.
+Description: The wfpthemes package provides a ggplot2 theme and a set of colour palettes for making graphics based on WFP Data Visualization Guidelines
 URL: https://www.wfp.org
 License: AGPL-3
 Encoding: UTF-8
